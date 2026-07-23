@@ -11,6 +11,79 @@ export const Route = createFileRoute("/")({
 
 const EVENT_DATE = new Date("2026-09-12T19:00:00");
 
+const CalendarIcon = () => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.5"
+    className="w-8 h-8 text-coral-deep"
+  >
+    <path
+      d="M8 2v3M16 2v3M3.5 9.02h17M19 4H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Z"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <rect x="7.5" y="12" width="2" height="2" rx="0.5" fill="currentColor" />
+    <rect x="11" y="12" width="2" height="2" rx="0.5" fill="currentColor" />
+    <rect x="14.5" y="12" width="2" height="2" rx="0.5" fill="currentColor" />
+    <rect x="7.5" y="16" width="2" height="2" rx="0.5" fill="currentColor" />
+    <rect x="11" y="16" width="2" height="2" rx="0.5" fill="currentColor" />
+    <rect x="14.5" y="16" width="2" height="2" rx="0.5" fill="currentColor" />
+  </svg>
+);
+
+const LocationIcon = () => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.5"
+    className="w-8 h-8 text-coral-deep"
+  >
+    <path
+      d="M20 10.41C20 15.82 12 22 12 22S4 15.82 4 10.41C4 6.04 7.58 2.5 12 2.5s8 3.54 8 7.91Z"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <circle
+      cx="12"
+      cy="10"
+      r="3"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+const DressSuitIcon = () => (
+  <svg
+    id="Capa_2"
+    data-name="Capa 2"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 873.02 1022.11"
+    className="w-9 h-9 text-coral-deep"
+    fill="currentColor"
+  >
+    <g id="Capa_1-2" data-name="Capa 1">
+      <g>
+        <g>
+          <g>
+            <path d="M706.87,125.53l7.02-64.48c3-7.88,13.53-4.03,12.01,3.93l-7.07,63.88c46.54,24.51,18.36,75.12,6.02,111.15-9.52,27.79-19.73,58.99-11.31,88.34,2.31,8.05,12.96,23.75,17.18,32.82,27.89,59.9,28.6,103.02,27.18,167.9-3.35,152.93,60.82,301.37,114.47,441.44,3.78,13.23-10.01,19.69-20.52,22.51-28.72,7.7-56.74-.6-85.96,12.04-18.91,8.18-26.93,15.08-49.49,16.51-38.63,2.46-69.42-12.67-107.75-6.75-31.61,4.88-56.27,12.43-88.8,2.22-9.83-3.09-17.76-9.23-27.03-12.97-24.83-10.02-46.55-5.24-71.45-8.55-10.91-1.45-34.11-6.82-33.27-21.24,41.74-111.29,89.03-224.44,108.44-342.56,6.33-38.55,7.56-72.71,7.36-111.73-.27-54.28-2.13-87.73,18.21-139.7,16.46-42.07,35.98-52.37,25.26-102.76-2.74-12.87-7.03-25.33-11.24-37.76-12.13-35.8-39.77-86.18,5.76-110.9l-7.06-64.86c.95-8.36,9.84-10.17,12.82-1.76l6.64,62.36c1.28,1.86,10.14.62,13.05.95,24.99,2.82,46.16,20.84,63.15,37.91,12.77-11.82,24.97-24.15,41.4-31.4,3.61-1.59,16.31-6.53,19.47-6.53h15.5ZM635.58,177.23c-2.01,1.61-6.38,1.84-8.7.78-3.09-1.42-14.93-15.45-19-18.99-18.62-16.23-58.87-36.22-74.84-5.81-13.26,25.24,12.18,71.53,20.09,97.56,4.43,14.57,7.22,29.49,10.7,44.3,44.02,9.13,90.14,8.82,134.15-.11,2.23-15.67,5.9-31.1,10.62-46.18,8.33-26.65,38.52-80.61,13.29-103.75-25.04-22.96-70.67,10.91-86.31,32.22ZM700.85,326.49l-2.13-17.31c-.36-1.18-1.04-1.58-2.25-1.6-4.72-.09-15.55,3.12-21.22,3.82-26.55,3.29-54.21,3.87-80.86,1.12-10.55-1.09-21.08-3.19-31.51-5l-1.41,19.12c45.07,13.56,94.32,13.07,139.38-.15ZM760.89,993.53c26.34-12.75,55.88-5.94,83.19-11.3,3.22-.63,17.02-4.12,16.63-8.01-39.79-98.51-78.95-199.39-101.35-303.68-7.02-32.7-13.04-67.02-14.48-100.52-1.76-40.98,4.5-83.29-1.15-123.85-5.24-37.63-19.89-75.3-39.53-107.54-48.11,13.26-99.66,13.94-147.69-.18-16.1,28.65-29.79,59.42-36.34,91.88-10.15,50.26-1.02,97.5-4.31,147.69-2.34,35.86-9.61,73.36-17.67,108.33-22.87,99.18-60.62,193.91-97.16,288.47,1.18,5.07,18.77,7.98,23.47,8.58,24.9,3.22,51.34-1.82,74.91,9.98l1.29-1.53c33.83-122.6,60.18-248.16,66.22-375.79.57-12.14-1.16-26.11.98-38.02,1.13-6.28,10.78-6.23,11.92,1.04,2.17,13.83-2.58,30.76-.9,44.98-4.68,82.4-17.06,164-34.53,244.47-9.58,44.12-21.6,87.56-32.58,131.32,16.44,9.31,38.9,10.91,57.56,9.65,22.43-1.52,42.48-9.92,66.06-9.04,18.97.71,38.11,7.76,56.96,9.04s40.82-.35,57.03-9.94c-18.96-69.2-36.11-139.01-48.23-209.86-11.55-67.53-18.36-135.22-20.35-203.64-.1-3.52-.12-10.99,3.96-12.12,4.45-1.24,8.27.37,9.02,5.14,2.24,14.26-.85,34.95,1.02,49.98,7.6,123.73,32.71,245.57,66.06,364.46Z" />
+          </g>
+          <g>
+            <g>
+              <path d="M338.87,512.03c-1.61,7.63-16.7,4.9-19.1,7.9l-6.86,142.14c-4.59,95.15-9.18,190.62-14.08,285.92-.7,13.63.92,36.16-2.42,48.58-1.98,7.34-8.52,13.12-15.72,15.28-9.21,2.76-38.42,2.76-47.63,0-20.4-6.11-16.24-26.54-17.14-42.86-5.99-108.52-9.8-217.16-14.04-325.97-.05-1.21.75-3.72-.99-3.48l-5.02,110.48c-3.14,69.32-6.47,138.86-9.98,208.02-.55,10.86.99,32.64-3.28,41.72-4.9,10.42-14.51,13.07-25.19,13.81-18.69,1.3-49.91,3.6-53.55-20.53l-21.13-472.87-1.51-1.49c-5.23-.54-14.45-.51-17.22-5.78-2.45-4.66,1.23-14.55-.15-20.37-1.5.74-2.73,1.02-4.43,1.06-14.86.37-37.99,1.6-52.08-.04-4.69-.54-6.09-1.97-6.54-6.46-2.19-22.26.7-49.5,1.1-72.02,1.76-100.28,5.25-203.36,18.08-302.92,2.64-20.46.94-35.6,21.52-45.48,24.61-11.82,78.79-26.46,96.39-43.61,5.4-5.26,12.26-21.31,18.94-23.06l89.77.28c5.75,2.32,12.97,18.29,17.59,22.91,17.45,17.45,73.69,31.77,98.35,44.15,10.21,5.13,14.81,11.74,17.04,22.96,4.95,24.85,6.93,57.95,9.27,83.73,9.42,104.06,11.55,208.44,12.95,312.94-.42,2.65-2.68,6.01-5.47,6.53-17.67-.14-35.36.26-53.04.09-1.65-.02-3.72-1.05-3.95-1.03-2.4.15-.48,2.34-.48,2.47,0,4.48.79,13.26,0,17ZM236.87,11.53l-71.99,1.49c9.57,15.1,22.99,26.99,35.64,39.4,2.37.41,17.37-15.15,19.87-17.88,2.2-2.41,18.54-21.03,16.48-23.01ZM162.88,84.52l27.99-24.46c-13.59-11.38-25.69-24.8-35.49-39.53-2.04,2.47-6.47,7.29-6.46,10.34.03,5.64,2.95,22.84,4.42,28.68,2.1,8.33,7.64,16.44,9.54,24.97ZM239.86,83.52c1.93-7.85,6.51-15.2,8.52-22.99,1.72-6.66,4.34-21.9,4.52-28.56.14-4.99-2.78-7.61-5.53-11.43-9.97,14.84-23.04,26.89-35.43,39.62-.29,1.69,19.45,18.08,22.45,20.34,1,.75,4.56,3.7,5.46,3.02ZM137.87,38.53l-11.43,7.06-17.43,43.78c4.9,3.22,22.6,10.8,22.88,16.75.31,6.7-19.65,17.31-18.87,22.67,20.64,41.31,41.95,82.49,66.45,121.66,4.24,6.77,8.56,13.73,13.41,20.08-24.78-75.54-44.36-153-55-231.99ZM210.86,270.52c14.97-25.81,30.83-51.13,45.18-77.32,11.42-20.84,22.05-42.16,32.67-63.43,1.41-8.35-25.45-18.26-15.33-28.24,4.51-4.45,13.36-7.72,18.45-11.58.88-.66,1.96-1.18,1.62-2.5l-17.73-41.29c-1.15-1.65-8.67-7.11-10.38-7.63-1.94-.6-1.29.41-1.46,1.49-2.46,15.93-4.39,31.81-7.34,47.68-11.32,60.94-26.53,121.07-46.24,179.76l.55,3.04ZM76,505.39c1.13,1.75,34.62,4.97,39.32,5.18,10.04.45,34.62,1.27,43.1-2,16.16-6.23,23.19-44.27,26.14-59.86,2-10.6,4.48-24.11,5.28-34.71,1.18-15.51-3.76-33.98-4.96-49.99-1.88-25.24-2.05-49.54,5.81-73.79-34.84-51.25-64.63-105.79-91.43-161.66-3.02-6.99,14.7-16.72,15.57-20.61.68-3.03-20.78-10.77-20.06-16.93l15.09-38.51-64.99,26.01c24.5,79.87,46.49,163.06,44.05,247.53-.06,2.13-.96,4.05-1.03,5.97-.38,9.83-.78,19.67-1.02,29.49l42.45,2.05c3.42.4,6.04,3.27,6.34,6.67.37,4.27-1.81,25.17-3,29.55-3.07,11.2-17.65,6.8-25.24,6.68-8.17-.13-16.38.18-24.54.04l-6.87,98.87ZM315.87,361.53c-2.66-37.63-3.71-76.87,1.12-114.37,3.31-25.64,9.67-54.17,15.55-79.45,6.87-29.56,14.86-59.17,25.07-87.69l-65.75-27.48,15.9,38.51c-.07,4.84-15.21,12.57-19.61,15.27-.56.34-1.99-.01-1.28,1.7,2.41,5.84,19.02,12.85,15.76,21.79-24.21,49.63-50.65,98.12-80.36,144.64-5.29,8.29-21.03,28.01-23.65,35.35-3.8,10.64-2.54,37.27-1.75,49.23,2.03,30.95,16.3,123.9,38.5,144.5,4.52,4.2,11.9,6.57,17.96,7.04,23.87,1.88,50-1.32,73.54-5.04l-7.15-98.35-1.31-1.39-37.09,1.78c-5.2.26-10.85-4-12.03-8.96s-2.18-17-2.41-22.58c-.24-5.88-.85-10.06,5.7-12.28l43.29-2.21ZM206.76,95.41l4.97-17.16-10.34-9.47c-3.59,2.54-10.72,6.74-10.46,11.1.1,1.73,4.42,15.05,5.11,15.48l10.72.05ZM180.86,86.53c-1.38-1.23-16.21,14.05-20.06,13.57l15.08,71.43,1.99-1.5c.19-20.69,7.54-43.86,8.04-64.06.16-6.58-4.44-12.87-5.04-19.45ZM240.72,99.66c-6.5-1.65-11.07-8.47-16.33-12.15-.85-.6-1-1.38-2.5-.98l-5.46,16.85,8.46,69.14,15.84-72.86ZM55.87,481.53c3-62.54,6.46-125.07,12-187.5,1.2-13.47,5.21-31.08,5.08-44-.1-9.75-4.63-27.15-6.56-37.53-6.84-36.77-16.36-82.84-29.4-117.6-.48-1.27-.22-3.07-2.11-3.38-2.6,27.85-6.49,55.64-9,83.51-7.93,87.89-11.6,178.81-13.05,266.95-.22,13.17.25,26.38.04,39.54h43ZM346.87,481.53h41.5c3.47-3.49.59-9.18.46-13.46-3.85-124.68-4.08-249.15-20.93-373.07-.2-1.5-.14-3.08-2.01-3.47-10.22,35.98-20.37,72.04-27.72,108.79-3.22,16.08-9.05,39.9-8.28,55.7.67,13.78,3.78,29.02,4.99,43.01,4.07,47.16,7.39,94.84,9.99,142.01.29,5.27.46,39.18,2.01,40.49ZM204.76,108.64l-7.9-.11c-.12,2.14.25,4.36,0,6.5-3.22,26.49-10.49,60.18-11.04,85.98-.2,9.52,9.97,40.14,13.77,50.32.45,1.21.58,2.42,1.79,3.21l15.41-49.59-12.02-96.3ZM122.87,375.53l-41.36-1.86c-1.28.33-1.44,1.21-1.64,2.35-.33,1.9-1.62,16.89-1,17.51l42,.99,2.01-18.99ZM321.86,373.54l-41.99,1.98,1,19.01,43.01-1.01-2.02-19.99ZM306.88,521.52c-15.3-.2-31.23,2.66-46.5,2-26.66-1.17-36.94-9.65-47.68-33.32-6.28-13.84-10.97-29.74-13.84-44.67-1.51.19-1.61,1.41-1.89,2.59-2.38,9.71-3.58,19.79-6.38,29.62-8.79,30.91-15.64,44.13-50.23,45.77-15.04.71-30.44-2.19-45.49-1.98l18.04,389.45c.94,20.29.71,40.77,1.97,61.03.34,5.54.42,14.76,1.43,19.57.69,3.29,2.7,6.76,5.98,8.02,5.47.61,12.69,1.88,18.03,1.97,6.02.1,17.23-.24,22.98-1.1,5.41-.82,8.57-5.4,9.48-10.52,6.7-156.95,12.18-313.14,22.16-469.84,1.75-8.25,11.24-6.94,12.69,1.16s.7,20.99,1.25,29.75c9.2,146.66,12.5,293.93,20.23,440.77.63,3.52,2.94,6.34,6.19,7.81,14.1,2,28.31,2.35,42.41.26,3.04-.8,5.93-4.37,6.69-7.31.95-3.63,1.21-12.97,1.51-17.49,1.82-27.24,1.64-54.79,2.92-82.08,5.02-107.25,10.9-214.88,16.03-321.97.79-16.49.87-33.03,2.02-49.5Z" />
+              <path fill="#fff" d="M206.76,95.41l-10.72-.05c-.69-.43-5.01-13.74-5.11-15.48-.26-4.35,6.87-8.55,10.46-11.1l10.34,9.47-4.97,17.16Z" />
+              <circle cx="214.3" cy="337.08" r="12.44" />
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </svg>
+);
+
 function useCountdown(target: Date) {
   const [now, setNow] = useState(() => Date.now());
   useEffect(() => {
@@ -83,12 +156,13 @@ function Invitation() {
   const heroContentRef = useRef<HTMLDivElement>(null);
   const floral1Ref = useRef<HTMLImageElement>(null);
   const floral2Ref = useRef<HTMLImageElement>(null);
-  const storyImgRef = useRef<HTMLImageElement>(null);
   const celebrationRef = useRef<HTMLImageElement>(null);
   const rsvpFloral1Ref = useRef<HTMLImageElement>(null);
   const rsvpFloral2Ref = useRef<HTMLImageElement>(null);
   const [rsvpSent, setRsvpSent] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [activeSlide, setActiveSlide] = useState(0);
+  const storySlides = [heroFlowers, floralAccent, celebration];
 
   useEffect(() => {
     const t = setTimeout(() => {
@@ -131,7 +205,6 @@ function Invitation() {
             (rect.top + rect.height / 2 - window.innerHeight / 2) * speed * k;
           el.style.transform = `translate3d(0, ${offset}px, 0) scale(1.15)`;
         };
-        applyBg(storyImgRef.current, -0.15);
         applyBg(celebrationRef.current, -0.2);
         if (rsvpFloral1Ref.current)
           rsvpFloral1Ref.current.style.transform = `translate3d(${y * -0.08 * k}px, ${y * 0.12 * k}px, 0)`;
@@ -148,11 +221,12 @@ function Invitation() {
     };
   }, []);
 
-  const handleRsvp = (e: React.FormEvent) => {
-    e.preventDefault();
-    setRsvpSent(true);
-    fireConfetti();
-  };
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % storySlides.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <main className="relative min-h-screen bg-background text-foreground">
@@ -165,7 +239,6 @@ function Invitation() {
           transition: "transform 0.05s linear",
         }}
       />
-
       {/* ========== HERO ========== */}
       <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
         <div
@@ -258,7 +331,6 @@ function Invitation() {
           </div>
         </div>
       </section>
-
       {/* ========== COUNTDOWN ========== */}
       <section
         className="relative overflow-hidden py-12 sm:py-14 md:py-16"
@@ -304,7 +376,6 @@ function Invitation() {
           </div>
         </div>
       </section>
-
       {/* ========== STORY / IMAGE ========== */}
       <section className="relative overflow-hidden py-14 sm:py-16 md:py-20">
         <div className="mx-auto grid max-w-6xl gap-8 px-5 sm:px-6 md:grid-cols-2 md:items-center md:gap-12">
@@ -317,15 +388,34 @@ function Invitation() {
               style={{ background: "var(--gradient-gold)" }}
             />
             <div className="relative aspect-4/3 overflow-hidden rounded-lg">
-              <img
-                ref={storyImgRef}
-                src={heroFlowers}
-                alt="Ramo floral de rosas coral y beige"
-                loading="lazy"
-                width={1536}
-                height={1024}
-                className="absolute inset-0 h-full w-full object-cover will-change-transform"
-              />
+              {storySlides.map((src, i) => (
+                <img
+                  key={i}
+                  src={src}
+                  alt={`Momento ${i + 1}`}
+                  width={1536}
+                  height={1024}
+                  className="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ease-in-out"
+                  style={{ opacity: i === activeSlide ? 1 : 0 }}
+                />
+              ))}
+              <div className="absolute bottom-0 left-0 right-0 flex justify-center gap-2 pb-4">
+                {storySlides.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setActiveSlide(i)}
+                    aria-label={`Slide ${i + 1}`}
+                    className="h-1.5 rounded-full transition-all duration-500"
+                    style={{
+                      width: i === activeSlide ? "1.5rem" : "0.5rem",
+                      background:
+                        i === activeSlide
+                          ? "var(--gold)"
+                          : "color-mix(in oklab, var(--beige-soft) 60%, transparent)",
+                    }}
+                  />
+                ))}
+              </div>
             </div>
           </div>
           <div className="reveal-on-scroll">
@@ -358,11 +448,10 @@ function Invitation() {
             </p>
           </div>
         </div>
-      </section>
-
+      </section>{" "}
       {/* ========== DETAILS ========== */}
       <section
-        className="relative overflow-hidden py-14 sm:py-16 md:py-20"
+        className="relative overflow-hidden py-16 sm:py-20"
         style={{ backgroundColor: "var(--beige)" }}
       >
         <div className="mx-auto max-w-6xl px-5 sm:px-6">
@@ -376,55 +465,155 @@ function Invitation() {
             <div className="mx-auto my-6 w-24 gold-divider sm:w-32" />
           </div>
 
-          <div className="mt-8 grid gap-5 sm:gap-6 md:mt-10 md:grid-cols-3">
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
             {[
               {
-                icon: "📅",
+                icon: <CalendarIcon />,
                 title: "Cuándo",
                 lines: ["Sábado 12 de Septiembre", "2026 · 7:00 pm"],
               },
               {
-                icon: "📍",
+                icon: <LocationIcon />,
                 title: "Dónde",
                 lines: ["Salón Villa Coral", "Av. de los Jardines 250"],
+                link: "https://maps.google.com/?q=Salón+Villa+Coral+Av+de+los+Jardines+250",
               },
               {
-                icon: "👗",
+                icon: <DressSuitIcon />,
                 title: "Etiqueta",
-                lines: ["Cóctel elegante", "Tonos coral y dorado"],
+                lines: [
+                  "Damas: Cóctel elegante (Coral/Dorado)",
+                  "Varones: Traje formal / Saco",
+                ],
               },
-            ].map((d) => (
+            ].map((d, idx) => (
               <div
                 key={d.title}
-                className="reveal-on-scroll group relative overflow-hidden rounded-lg border border-border bg-card p-6 text-center transition-all duration-500 hover:-translate-y-2 sm:p-10"
-                style={{ boxShadow: "var(--shadow-elegant)" }}
+                className="reveal-on-scroll invitation-card group text-center"
+                style={{
+                  transitionDelay: `${idx * 150}ms`,
+                }}
               >
-                <div
-                  className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                  style={{
-                    background: "var(--gradient-gold)",
-                    mixBlendMode: "overlay",
-                  }}
-                />
-                <div className="text-4xl">{d.icon}</div>
+                {/* Decorative Elements */}
+                <div className="card-frame" />
+                <div className="shine-sweep" />
+
+                {/* Flourish Corners */}
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.2"
+                  className="card-flourish flourish-tl"
+                >
+                  <path
+                    d="M2 2 C 8 2, 12 6, 12 12 C 12 8, 16 4, 22 2"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M2 2 C 2 8, 6 12, 12 12 C 8 12, 4 16, 2 22"
+                    strokeLinecap="round"
+                  />
+                  <circle cx="6" cy="6" r="1.5" fill="currentColor" />
+                </svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.2"
+                  className="card-flourish flourish-tr"
+                >
+                  <path
+                    d="M2 2 C 8 2, 12 6, 12 12 C 12 8, 16 4, 22 2"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M2 2 C 2 8, 6 12, 12 12 C 8 12, 4 16, 2 22"
+                    strokeLinecap="round"
+                  />
+                  <circle cx="6" cy="6" r="1.5" fill="currentColor" />
+                </svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.2"
+                  className="card-flourish flourish-bl"
+                >
+                  <path
+                    d="M2 2 C 8 2, 12 6, 12 12 C 12 8, 16 4, 22 2"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M2 2 C 2 8, 6 12, 12 12 C 8 12, 4 16, 2 22"
+                    strokeLinecap="round"
+                  />
+                  <circle cx="6" cy="6" r="1.5" fill="currentColor" />
+                </svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.2"
+                  className="card-flourish flourish-br"
+                >
+                  <path
+                    d="M2 2 C 8 2, 12 6, 12 12 C 12 8, 16 4, 22 2"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M2 2 C 2 8, 6 12, 12 12 C 8 12, 4 16, 2 22"
+                    strokeLinecap="round"
+                  />
+                  <circle cx="6" cy="6" r="1.5" fill="currentColor" />
+                </svg>
+
+                {/* Badge Icon Container */}
+                <div className="icon-badge-container mb-6">
+                  <div className="icon-badge-ring-1" />
+                  <div className="icon-badge-ring-2" />
+                  <span className="relative z-10 text-3xl transition-transform duration-500 group-hover:scale-125 select-none flex items-center justify-center">
+                    {d.icon}
+                  </span>
+                </div>
+
                 <h3
-                  className="mt-4 text-xl text-coral-deep sm:text-2xl"
+                  className="mt-2 text-xl text-coral-deep sm:text-2xl font-semibold"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   {d.title}
                 </h3>
                 <div className="mx-auto my-4 w-16 gold-divider" />
-                {d.lines.map((l) => (
-                  <p key={l} className="text-brown">
-                    {l}
-                  </p>
-                ))}
+
+                <div className="space-y-1">
+                  {d.lines.map((l) => (
+                    <p
+                      key={l}
+                      className="text-brown text-sm sm:text-base font-light"
+                    >
+                      {l}
+                    </p>
+                  ))}
+                </div>
+
+                {"link" in d && (
+                  <a
+                    href={d.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-map"
+                  >
+                    <span>Ver en el mapa</span>
+                    <span className="text-xs transition-transform duration-300 group-hover:translate-x-1">
+                      ↗
+                    </span>
+                  </a>
+                )}
               </div>
             ))}
           </div>
         </div>
       </section>
-
       {/* ========== GALLERY / CELEBRATION ========== */}
       <section className="relative overflow-hidden">
         <div className="relative h-[60vh] w-full overflow-hidden sm:h-[70vh] md:h-[80vh]">
@@ -459,7 +648,6 @@ function Invitation() {
           </div>
         </div>
       </section>
-
       {/* ========== RSVP ========== */}
       <section
         className="relative overflow-hidden py-14 sm:py-16 md:py-20"
@@ -499,74 +687,136 @@ function Invitation() {
 
           {rsvpSent ? (
             <div
-              className="reveal-on-scroll mt-10 rounded-lg border border-border bg-card p-10"
+              className="reveal-on-scroll mt-8 max-w-md mx-auto rounded-lg border border-border bg-card p-8 text-center"
               style={{ boxShadow: "var(--shadow-elegant)" }}
             >
-              <div className="text-5xl">💐</div>
+              <div className="text-4xl">💐</div>
               <h3
-                className="mt-4 text-2xl text-coral-deep"
+                className="mt-3 text-2xl text-coral-deep"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 ¡Gracias!
               </h3>
-              <p className="mt-2 text-brown">Nos vemos el 12 de Septiembre.</p>
+              <p className="mt-2 text-brown text-sm">
+                Nos vemos el 12 de Septiembre.
+              </p>
             </div>
           ) : (
-            <form
-              onSubmit={handleRsvp}
-              className="reveal-on-scroll mt-10 space-y-4 rounded-lg border border-border bg-card p-8 text-left"
-              style={{ boxShadow: "var(--shadow-elegant)" }}
-            >
-              <div>
-                <label className="text-xs uppercase tracking-[0.3em] text-brown">
-                  Nombre
-                </label>
-                <input
-                  required
-                  type="text"
-                  className="mt-2 w-full rounded-md border border-border bg-background px-4 py-3 outline-none transition-colors focus:border-coral"
-                  placeholder="Tu nombre completo"
-                />
-              </div>
-              <div>
-                <label className="text-xs uppercase tracking-[0.3em] text-brown">
-                  Acompañantes
-                </label>
-                <select
-                  className="mt-2 w-full rounded-md border border-border bg-background px-4 py-3 outline-none focus:border-coral"
-                  defaultValue="1"
-                >
-                  <option value="1">Solo yo</option>
-                  <option value="2">2 personas</option>
-                  <option value="3">3 personas</option>
-                  <option value="4">4 personas</option>
-                </select>
-              </div>
-              <div>
-                <label className="text-xs uppercase tracking-[0.3em] text-brown">
-                  Mensaje (opcional)
-                </label>
-                <textarea
-                  rows={3}
-                  className="mt-2 w-full rounded-md border border-border bg-background px-4 py-3 outline-none focus:border-coral"
-                  placeholder="Un deseo especial…"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full rounded-full py-4 text-sm uppercase tracking-[0.25em] text-white transition-transform hover:scale-[1.02]"
-                style={{
-                  background: "var(--gradient-coral)",
-                  boxShadow: "var(--shadow-gold)",
-                }}
+            <div className="reveal-on-scroll invitation-card mt-8 max-w-md mx-auto space-y-6 text-center relative overflow-hidden py-10 sm:py-12">
+              <div className="card-frame" />
+
+              {/* Flourish Corners */}
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.2"
+                className="card-flourish flourish-tl"
               >
-                Confirmar Asistencia
-              </button>
-            </form>
+                <path
+                  d="M2 2 C 8 2, 12 6, 12 12 C 12 8, 16 4, 22 2"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M2 2 C 2 8, 6 12, 12 12 C 8 12, 4 16, 2 22"
+                  strokeLinecap="round"
+                />
+                <circle cx="6" cy="6" r="1.5" fill="currentColor" />
+              </svg>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.2"
+                className="card-flourish flourish-tr"
+              >
+                <path
+                  d="M2 2 C 8 2, 12 6, 12 12 C 12 8, 16 4, 22 2"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M2 2 C 2 8, 6 12, 12 12 C 8 12, 4 16, 2 22"
+                  strokeLinecap="round"
+                />
+                <circle cx="6" cy="6" r="1.5" fill="currentColor" />
+              </svg>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.2"
+                className="card-flourish flourish-bl"
+              >
+                <path
+                  d="M2 2 C 8 2, 12 6, 12 12 C 12 8, 16 4, 22 2"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M2 2 C 2 8, 6 12, 12 12 C 8 12, 4 16, 2 22"
+                  strokeLinecap="round"
+                />
+                <circle cx="6" cy="6" r="1.5" fill="currentColor" />
+              </svg>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.2"
+                className="card-flourish flourish-br"
+              >
+                <path
+                  d="M2 2 C 8 2, 12 6, 12 12 C 12 8, 16 4, 22 2"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M2 2 C 2 8, 6 12, 12 12 C 8 12, 4 16, 2 22"
+                  strokeLinecap="round"
+                />
+                <circle cx="6" cy="6" r="1.5" fill="currentColor" />
+              </svg>
+
+              <p className="text-brown text-xs sm:text-sm font-light leading-relaxed max-w-xs mx-auto relative z-10">
+                Al hacer clic en el botón, te redirigiremos a WhatsApp para
+                confirmar tu asistencia.
+              </p>
+
+              <div className="relative z-10">
+                <button
+                  onClick={() => {
+                    setRsvpSent(true);
+                    fireConfetti();
+                    // Reemplaza con el número de teléfono deseado
+                    window.open(
+                      "https://wa.me/521234567890?text=¡Hola!%20Confirmo%20mi%20asistencia%20a%20tu%20cumpleaños%20de%2050%20años.",
+                      "_blank",
+                    );
+                  }}
+                  className="inline-flex items-center justify-center gap-2.5 rounded-full px-6 mb-4 py-3 text-[11px] font-medium uppercase tracking-[0.2em] text-white transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
+                  style={{
+                    background: "var(--gradient-coral)",
+                    boxShadow: "var(--shadow-gold)",
+                  }}
+                >
+                  <svg
+                    className="w-3.5 h-3.5"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M3.5 12C3.5 7.30558 7.30558 3.5 12 3.5C16.6944 3.5 20.5 7.30558 20.5 12C20.5 16.6944 16.6944 20.5 12 20.5C10.3278 20.5 8.77127 20.0182 7.45798 19.1861C7.21357 19.0313 6.91408 18.9899 6.63684 19.0726L3.75769 19.9319L4.84173 17.3953C4.96986 17.0955 4.94379 16.7521 4.77187 16.4751C3.9657 15.176 3.5 13.6439 3.5 12ZM12 1.5C6.20101 1.5 1.5 6.20101 1.5 12C1.5 13.8381 1.97314 15.5683 2.80463 17.0727L1.08045 21.107C0.928028 21.4637 0.995589 21.8763 1.2538 22.1657C1.51201 22.4552 1.9143 22.5692 2.28597 22.4582L6.78539 21.1155C8.32243 21.9965 10.1037 22.5 12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5ZM14.2925 14.1824L12.9783 15.1081C12.3628 14.7575 11.6823 14.2681 10.9997 13.5855C10.2901 12.8759 9.76402 12.1433 9.37612 11.4713L10.2113 10.7624C10.5697 10.4582 10.6678 9.94533 10.447 9.53028L9.38284 7.53028C9.23954 7.26097 8.98116 7.0718 8.68115 7.01654C8.38113 6.96129 8.07231 7.046 7.84247 7.24659L7.52696 7.52195C6.76823 8.18414 6.3195 9.2723 6.69141 10.3741C7.07698 11.5163 7.89983 13.314 9.58552 14.9997C11.3991 16.8133 13.2413 17.5275 14.3186 17.8049C15.1866 18.0283 16.008 17.7288 16.5868 17.2572L17.1783 16.7752C17.4313 16.5691 17.5678 16.2524 17.544 15.9269C17.5201 15.6014 17.3389 15.308 17.0585 15.1409L15.3802 14.1409C15.0412 13.939 14.6152 13.9552 14.2925 14.1824Z"
+                    />
+                  </svg>
+                  <span>Confirmar por WhatsApp</span>
+                </button>
+              </div>
+            </div>
           )}
         </div>
       </section>
-
       {/* ========== FOOTER ========== */}
       <footer
         className="relative py-10 text-center"
