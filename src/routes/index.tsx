@@ -3,13 +3,13 @@ import { useEffect, useRef, useState } from "react";
 import confetti from "canvas-confetti";
 import heroFlowers from "@/assets/hero-flowers.jpg";
 import floralAccent from "@/assets/floral.png";
-import celebration from "@/assets/celebration.jpg";
+import celebration from "@/assets/celebration.webp";
 
 export const Route = createFileRoute("/")({
   component: Invitation,
 });
 
-const EVENT_DATE = new Date("2026-09-12T19:00:00");
+const EVENT_DATE = new Date("2026-08-29T19:00:00");
 
 const CalendarIcon = () => (
   <svg
@@ -74,7 +74,10 @@ const DressSuitIcon = () => (
           <g>
             <g>
               <path d="M338.87,512.03c-1.61,7.63-16.7,4.9-19.1,7.9l-6.86,142.14c-4.59,95.15-9.18,190.62-14.08,285.92-.7,13.63.92,36.16-2.42,48.58-1.98,7.34-8.52,13.12-15.72,15.28-9.21,2.76-38.42,2.76-47.63,0-20.4-6.11-16.24-26.54-17.14-42.86-5.99-108.52-9.8-217.16-14.04-325.97-.05-1.21.75-3.72-.99-3.48l-5.02,110.48c-3.14,69.32-6.47,138.86-9.98,208.02-.55,10.86.99,32.64-3.28,41.72-4.9,10.42-14.51,13.07-25.19,13.81-18.69,1.3-49.91,3.6-53.55-20.53l-21.13-472.87-1.51-1.49c-5.23-.54-14.45-.51-17.22-5.78-2.45-4.66,1.23-14.55-.15-20.37-1.5.74-2.73,1.02-4.43,1.06-14.86.37-37.99,1.6-52.08-.04-4.69-.54-6.09-1.97-6.54-6.46-2.19-22.26.7-49.5,1.1-72.02,1.76-100.28,5.25-203.36,18.08-302.92,2.64-20.46.94-35.6,21.52-45.48,24.61-11.82,78.79-26.46,96.39-43.61,5.4-5.26,12.26-21.31,18.94-23.06l89.77.28c5.75,2.32,12.97,18.29,17.59,22.91,17.45,17.45,73.69,31.77,98.35,44.15,10.21,5.13,14.81,11.74,17.04,22.96,4.95,24.85,6.93,57.95,9.27,83.73,9.42,104.06,11.55,208.44,12.95,312.94-.42,2.65-2.68,6.01-5.47,6.53-17.67-.14-35.36.26-53.04.09-1.65-.02-3.72-1.05-3.95-1.03-2.4.15-.48,2.34-.48,2.47,0,4.48.79,13.26,0,17ZM236.87,11.53l-71.99,1.49c9.57,15.1,22.99,26.99,35.64,39.4,2.37.41,17.37-15.15,19.87-17.88,2.2-2.41,18.54-21.03,16.48-23.01ZM162.88,84.52l27.99-24.46c-13.59-11.38-25.69-24.8-35.49-39.53-2.04,2.47-6.47,7.29-6.46,10.34.03,5.64,2.95,22.84,4.42,28.68,2.1,8.33,7.64,16.44,9.54,24.97ZM239.86,83.52c1.93-7.85,6.51-15.2,8.52-22.99,1.72-6.66,4.34-21.9,4.52-28.56.14-4.99-2.78-7.61-5.53-11.43-9.97,14.84-23.04,26.89-35.43,39.62-.29,1.69,19.45,18.08,22.45,20.34,1,.75,4.56,3.7,5.46,3.02ZM137.87,38.53l-11.43,7.06-17.43,43.78c4.9,3.22,22.6,10.8,22.88,16.75.31,6.7-19.65,17.31-18.87,22.67,20.64,41.31,41.95,82.49,66.45,121.66,4.24,6.77,8.56,13.73,13.41,20.08-24.78-75.54-44.36-153-55-231.99ZM210.86,270.52c14.97-25.81,30.83-51.13,45.18-77.32,11.42-20.84,22.05-42.16,32.67-63.43,1.41-8.35-25.45-18.26-15.33-28.24,4.51-4.45,13.36-7.72,18.45-11.58.88-.66,1.96-1.18,1.62-2.5l-17.73-41.29c-1.15-1.65-8.67-7.11-10.38-7.63-1.94-.6-1.29.41-1.46,1.49-2.46,15.93-4.39,31.81-7.34,47.68-11.32,60.94-26.53,121.07-46.24,179.76l.55,3.04ZM76,505.39c1.13,1.75,34.62,4.97,39.32,5.18,10.04.45,34.62,1.27,43.1-2,16.16-6.23,23.19-44.27,26.14-59.86,2-10.6,4.48-24.11,5.28-34.71,1.18-15.51-3.76-33.98-4.96-49.99-1.88-25.24-2.05-49.54,5.81-73.79-34.84-51.25-64.63-105.79-91.43-161.66-3.02-6.99,14.7-16.72,15.57-20.61.68-3.03-20.78-10.77-20.06-16.93l15.09-38.51-64.99,26.01c24.5,79.87,46.49,163.06,44.05,247.53-.06,2.13-.96,4.05-1.03,5.97-.38,9.83-.78,19.67-1.02,29.49l42.45,2.05c3.42.4,6.04,3.27,6.34,6.67.37,4.27-1.81,25.17-3,29.55-3.07,11.2-17.65,6.8-25.24,6.68-8.17-.13-16.38.18-24.54.04l-6.87,98.87ZM315.87,361.53c-2.66-37.63-3.71-76.87,1.12-114.37,3.31-25.64,9.67-54.17,15.55-79.45,6.87-29.56,14.86-59.17,25.07-87.69l-65.75-27.48,15.9,38.51c-.07,4.84-15.21,12.57-19.61,15.27-.56.34-1.99-.01-1.28,1.7,2.41,5.84,19.02,12.85,15.76,21.79-24.21,49.63-50.65,98.12-80.36,144.64-5.29,8.29-21.03,28.01-23.65,35.35-3.8,10.64-2.54,37.27-1.75,49.23,2.03,30.95,16.3,123.9,38.5,144.5,4.52,4.2,11.9,6.57,17.96,7.04,23.87,1.88,50-1.32,73.54-5.04l-7.15-98.35-1.31-1.39-37.09,1.78c-5.2.26-10.85-4-12.03-8.96s-2.18-17-2.41-22.58c-.24-5.88-.85-10.06,5.7-12.28l43.29-2.21ZM206.76,95.41l4.97-17.16-10.34-9.47c-3.59,2.54-10.72,6.74-10.46,11.1.1,1.73,4.42,15.05,5.11,15.48l10.72.05ZM180.86,86.53c-1.38-1.23-16.21,14.05-20.06,13.57l15.08,71.43,1.99-1.5c.19-20.69,7.54-43.86,8.04-64.06.16-6.58-4.44-12.87-5.04-19.45ZM240.72,99.66c-6.5-1.65-11.07-8.47-16.33-12.15-.85-.6-1-1.38-2.5-.98l-5.46,16.85,8.46,69.14,15.84-72.86ZM55.87,481.53c3-62.54,6.46-125.07,12-187.5,1.2-13.47,5.21-31.08,5.08-44-.1-9.75-4.63-27.15-6.56-37.53-6.84-36.77-16.36-82.84-29.4-117.6-.48-1.27-.22-3.07-2.11-3.38-2.6,27.85-6.49,55.64-9,83.51-7.93,87.89-11.6,178.81-13.05,266.95-.22,13.17.25,26.38.04,39.54h43ZM346.87,481.53h41.5c3.47-3.49.59-9.18.46-13.46-3.85-124.68-4.08-249.15-20.93-373.07-.2-1.5-.14-3.08-2.01-3.47-10.22,35.98-20.37,72.04-27.72,108.79-3.22,16.08-9.05,39.9-8.28,55.7.67,13.78,3.78,29.02,4.99,43.01,4.07,47.16,7.39,94.84,9.99,142.01.29,5.27.46,39.18,2.01,40.49ZM204.76,108.64l-7.9-.11c-.12,2.14.25,4.36,0,6.5-3.22,26.49-10.49,60.18-11.04,85.98-.2,9.52,9.97,40.14,13.77,50.32.45,1.21.58,2.42,1.79,3.21l15.41-49.59-12.02-96.3ZM122.87,375.53l-41.36-1.86c-1.28.33-1.44,1.21-1.64,2.35-.33,1.9-1.62,16.89-1,17.51l42,.99,2.01-18.99ZM321.86,373.54l-41.99,1.98,1,19.01,43.01-1.01-2.02-19.99ZM306.88,521.52c-15.3-.2-31.23,2.66-46.5,2-26.66-1.17-36.94-9.65-47.68-33.32-6.28-13.84-10.97-29.74-13.84-44.67-1.51.19-1.61,1.41-1.89,2.59-2.38,9.71-3.58,19.79-6.38,29.62-8.79,30.91-15.64,44.13-50.23,45.77-15.04.71-30.44-2.19-45.49-1.98l18.04,389.45c.94,20.29.71,40.77,1.97,61.03.34,5.54.42,14.76,1.43,19.57.69,3.29,2.7,6.76,5.98,8.02,5.47.61,12.69,1.88,18.03,1.97,6.02.1,17.23-.24,22.98-1.1,5.41-.82,8.57-5.4,9.48-10.52,6.7-156.95,12.18-313.14,22.16-469.84,1.75-8.25,11.24-6.94,12.69,1.16s.7,20.99,1.25,29.75c9.2,146.66,12.5,293.93,20.23,440.77.63,3.52,2.94,6.34,6.19,7.81,14.1,2,28.31,2.35,42.41.26,3.04-.8,5.93-4.37,6.69-7.31.95-3.63,1.21-12.97,1.51-17.49,1.82-27.24,1.64-54.79,2.92-82.08,5.02-107.25,10.9-214.88,16.03-321.97.79-16.49.87-33.03,2.02-49.5Z" />
-              <path fill="#fff" d="M206.76,95.41l-10.72-.05c-.69-.43-5.01-13.74-5.11-15.48-.26-4.35,6.87-8.55,10.46-11.1l10.34,9.47-4.97,17.16Z" />
+              <path
+                fill="#fff"
+                d="M206.76,95.41l-10.72-.05c-.69-.43-5.01-13.74-5.11-15.48-.26-4.35,6.87-8.55,10.46-11.1l10.34,9.47-4.97,17.16Z"
+              />
               <circle cx="214.3" cy="337.08" r="12.44" />
             </g>
           </g>
@@ -240,139 +243,352 @@ function Invitation() {
         }}
       />
       {/* ========== HERO ========== */}
-      <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
+      <section className="relative flex min-h-screen items-center justify-center overflow-hidden py-12 md:py-20">
         <div
           ref={heroRef}
           className="absolute inset-0 -z-10 will-change-transform"
-          style={{ background: "var(--gradient-hero)" }}
+          style={{
+            background:
+              "linear-gradient(180deg, #fcf7f2 0%, #f7eae1 50%, #f3dfd3 100%)",
+          }}
         />
         <div className="grain absolute inset-0 -z-10" />
 
+        {/* Ambient subtle sparkle background dots */}
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(#d4af37_1px,transparent_1px)] bg-size-[32px_32px] opacity-15" />
+
+        {/* Top-Left Floral Corner */}
         <img
           ref={floral1Ref}
           src={floralAccent}
           alt=""
           aria-hidden="true"
-          width={400}
-          height={400}
-          className="pointer-events-none absolute -left-16 top-10 w-56 opacity-70 md:w-80 animate-float will-change-transform"
+          width={420}
+          height={420}
+          className="pointer-events-none absolute -left-10 -top-10 w-48 opacity-90 sm:w-64 md:w-80 lg:w-96 animate-float will-change-transform drop-shadow-md"
         />
+
+        {/* Bottom-Right Floral Corner */}
         <img
           ref={floral2Ref}
           src={floralAccent}
           alt=""
           aria-hidden="true"
-          width={400}
-          height={400}
-          className="pointer-events-none absolute -right-20 bottom-16 w-64 rotate-45 opacity-70 md:w-96 animate-float-slow will-change-transform"
+          width={420}
+          height={420}
+          className="pointer-events-none absolute -bottom-10 -right-10 w-52 rotate-120 opacity-90 sm:w-72 md:w-96 lg:w-105 animate-float-slow will-change-transform drop-shadow-md"
         />
 
+        {/* Central Card Container for Desktop & Seamless Mobile Hero */}
         <div
           ref={heroContentRef}
-          className="relative z-10 mx-auto max-w-3xl px-5 text-center will-change-transform sm:px-6"
+          className="relative z-10 mx-auto mt-14 flex w-full max-w-md flex-col items-center px-6 text-center will-change-transform sm:max-w-lg md:max-w-xl lg:max-w-2xl"
         >
-          <p
-            className="animate-fade-up text-[10px] uppercase tracking-[0.35em] text-brown sm:text-sm sm:tracking-[0.4em]"
+          {/* Crown Icon */}
+          <div
+            className="animate-fade-up mb-4 flex justify-center"
             style={{ animationDelay: "0.1s" }}
+          >
+            <div
+              className="
+      relative
+      flex h-14 w-14 items-center justify-center
+      rounded-full
+      border border-[#ecd8b4]
+      bg-linear-to-b
+      from-[#fffdf8]
+      to-[#f8efe3]
+      shadow-lg
+    "
+            >
+              {/* Destellos */}
+              <span className="absolute -left-1 top-2 text-[10px] text-[#e8c67a]">
+                ✦
+              </span>
+              <span className="absolute -right-1 bottom-2 text-[8px] text-[#e8c67a]">
+                ✦
+              </span>
+              {/* Tiara */}
+              <svg
+                className="w-9 h-9 sm:w-11 sm:h-11 text-[#c89d5c] drop-shadow-sm transition-transform duration-300 hover:scale-110"
+                viewBox="0 0 512 512"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+              >
+                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    fill="currentColor"
+                    d="M256 27.88l-8.1 16.09c-8.2 16.54-20.2 44.64-30.4 73.03-10.1 28.3-18.5 56-18.5 75 0 22 6.1 43.4 14.4 61.2-1.5.1-2.9.2-4.3.3-15-6.8-29.5-15-41.5-24.5-18.7-15-30.6-32.5-30.6-53 0-14.5 3.7-21.8 7-25 3.3-3.2 6.9-3.7 11.5-2.3 4.6 1.3 9.5 5 12 9.3 2.5 4.3 3.1 8.7.4 14l16.2 8c5.3-10.7 3.9-22.3-1.1-31s-13.1-15-22.5-17.7c-2.4-.6-4.8-1-7.4-1.1-7.5-.4-15.4 1.9-21.6 7.8-8.2 7.8-12.5 20.5-12.5 38 0 27.5 16.1 50 37.4 67 6 4.8 12.4 9.2 19.1 13.2-14.3 1.6-28 3.6-40.8 5.9-9.9-1.3-21-3.9-30.4-7.6-7.17-2.8-13.37-6.4-17.17-10-3.9-3.6-5.4-6.6-5.5-9.9v-.1c-.2-9.9 7.2-15.3 13.4-16 3.1-.4 5.37.4 7.17 2.2 1.7 1.8 3.6 5.4 3.2 12.9l18 1c.6-11.1-2.4-20.4-8.3-26.5-4.5-4.6-10.3-7-16.17-7.5-2-.2-3.9-.2-5.9 0-15.2 1.6-29.7 15.1-29.4 34.3.2 9.1 5 17 11.2 22.8 6.1 5.7 13.6 9.7 21.8 13.1l-1.2.3c-15.8 4.5-29.4 9.6-40.5 15.5-3.1.2-6 .4-8.3.1-2.8-.3-4.6-1-5.9-2-1.3-.9-2.4-2.3-3.5-5.7-.6-2 1.7-6.1 4.8-7.6 1.6-.8 2.7-.8 3.3-.5.7.2 1.8.7 3.2 4.3l16.8-6.4c-2.7-7.1-7.6-12.6-13.7-14.8-3.1-1.2-6.2-1.5-9.2-1.2-2.9.3-5.8 1.2-8.3 2.4-10.1 5-17.9 16.4-14.1 29 1.9 6.4 5.4 11.6 10 15 1.8 1.4 3.7 2.4 5.7 3.2-7.2 10.4-11.7 24.5-11.7 33.6 0 12.6 8.7 23.1 21.1 31.5 12.5 8.5 29.5 15.5 50.3 21.4 26.77 7.7 59.77 13.4 96.57 16.5 16-5.4 16-5.4 0-16.1-35.4-3.1-67.1-8.6-92.17-15.7-19.7-5.7-35.5-12.4-45.7-19.3-10.2-6.9-14.1-13.2-14.1-18.3 0-5.1 3.9-11.4 14.1-18.3s26-13.6 45.7-19.3c33.57-9.5 78.77-16.2 129.27-18 0 .1.1.1.1.1v-.1h1.1c1.6 2.1 3.4 4 5.1 5.7 6 6.1 12.1 10.9 20.6 10.9 8.5 0 14.6-4.8 20.6-10.9 1.7-1.7 3.5-3.6 5.1-5.7h1.1v.1s.1 0 .1-.1c50.5 1.8 95.7 8.5 129.3 18 19.7 5.7 35.5 12.4 45.7 19.3 10.2 6.9 14.1 13.2 14.1 18.3 0 5.1-3.9 11.4-14.1 18.3s-26 13.6-45.7 19.3c-25.1 7.1-56.8 12.6-92.2 15.7-16 10.7-16 10.7 0 16.1 36.8-3.1 69.8-8.8 96.6-16.5 20.8-5.9 37.8-12.9 50.3-21.4 12.4-8.4 21.1-18.9 21.1-31.5 0-9.1-4.5-23.3-11.7-33.6 1.9-.8 3.8-1.9 5.6-3.2 4.6-3.4 8.1-8.6 10-15 3.8-12.6-4-24-14.1-29-2.5-1.2-5.3-2.1-8.3-2.4-3-.3-6.1 0-9.2 1.2-6.1 2.2-11 7.7-13.7 14.8l16.8 6.4c1.4-3.6 2.5-4.1 3.2-4.3.6-.3 1.7-.3 3.3.5 3.1 1.5 5.4 5.6 4.8 7.6-1.1 3.4-2.2 4.8-3.5 5.7-1.3 1-3.1 1.7-5.9 2-2.3.2-5.1.1-8.2-.1-11.1-5.9-24.7-11-40.5-15.5l-1.2-.3c8.2-3.4 15.7-7.4 21.7-13.1 6.3-5.8 11.1-13.7 11.2-22.9.3-19.1-14.1-32.6-29.4-34.2-1.9-.2-3.9-.2-5.8 0-5.9.5-11.7 2.9-16.2 7.5-5.9 6.1-8.9 15.4-8.3 26.5l18-1c-.4-7.5 1.5-11.1 3.2-12.9 1.8-1.8 4.1-2.6 7.2-2.2 6.1.7 13.5 6.1 13.3 16v.1c-.1 3.3-1.6 6.3-5.4 9.9-3.9 3.6-10.1 7.2-17.2 10-9.4 3.7-20.5 6.3-30.4 7.6-12.8-2.3-26.5-4.3-40.8-5.9 6.7-4 13.1-8.4 19.1-13.2 21.3-17 37.4-39.5 37.4-67 0-17.5-4.3-30.2-12.5-38-6.2-5.9-14.1-8.2-21.6-7.8-2.6.1-5 .5-7.4 1.1-9.4 2.7-17.5 9-22.5 17.7s-6.4 20.3-1.1 31l16.2-8c-2.7-5.3-2.1-9.7.4-14 2.5-4.3 7.4-8 12-9.3 4.6-1.4 8.2-.9 11.5 2.3 3.3 3.2 7 10.5 7 25 0 20.5-11.9 38-30.6 53-12 9.5-26.5 17.7-41.5 24.5-1.4-.1-2.8-.2-4.3-.3C306.9 235.4 313 214 313 192c0-19-8.4-46.7-18.5-75-10.2-28.39-22.2-56.49-30.4-73.03zm0 41.45c6.8 15.23 14.6 34.37 21.5 53.67 9.9 27.7 17.5 56 17.5 69 0 22-7.5 44.8-16.9 61.6-4.6 8.4-9.8 15.3-14.2 19.8-4 3.9-7.5 5.3-7.9 5.5 0 .1.1.1 0 .1s0 0 0-.1c-.4-.2-3.9-1.6-7.9-5.5-4.4-4.5-9.6-11.4-14.2-19.8C224.5 236.8 217 214 217 192c0-13 7.6-41.3 17.5-69 6.9-19.3 14.7-38.44 21.5-53.67z"
+                  ></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          {/* Invitation Intro Header */}
+          <p
+            className="animate-fade-up text-[11px] font-medium uppercase tracking-[0.38em] text-[#7a5a4a] sm:text-xs md:text-sm md:tracking-[0.42em]"
+            style={{ animationDelay: "0.2s" }}
           >
             Estás cordialmente invitado a
           </p>
-          <div className="mx-auto my-5 w-28 gold-divider sm:my-6 sm:w-40" />
-          <h1
-            className="animate-fade-up text-5xl leading-[1.05] sm:text-6xl md:text-8xl"
-            style={{ animationDelay: "0.3s", fontFamily: "var(--font-script)" }}
+
+          {/* Top Flourish Ornament Line */}
+          <div
+            className="animate-fade-up my-3 flex items-center justify-center gap-2 text-[#c89d5c]"
+            style={{ animationDelay: "0.25s" }}
           >
-            <span className="text-shimmer">Mis Cincuenta</span>
+            <div className="h-px w-12 bg-linear-to-r from-transparent to-[#c89d5c] sm:w-20" />
+            <span className="text-[10px]">◆</span>
+            <div className="h-px w-12 bg-linear-to-l from-transparent to-[#c89d5c] sm:w-20" />
+          </div>
+
+          {/* Title: Mis Cincuenta */}
+          <h1
+            className="animate-fade-up my-2 text-6xl font-normal leading-tight sm:text-7xl md:text-8xl lg:text-9xl drop-shadow-sm"
+            style={{
+              animationDelay: "0.35s",
+              fontFamily: "var(--font-script)",
+              color: "#c66353",
+            }}
+          >
+            Mis Cincuenta
           </h1>
+
+          {/* Heart Flourish Divider */}
+          <div
+            className="animate-fade-up my-2 flex items-center justify-center gap-3 text-[#c89d5c]"
+            style={{ animationDelay: "0.45s" }}
+          >
+            <div className="h-px w-14 bg-linear-to-r from-transparent via-[#c89d5c] to-transparent sm:w-24" />
+            <svg
+              className="w-3.5 h-3.5 text-[#c66353] fill-current"
+              viewBox="0 0 24 24"
+            >
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+            </svg>
+            <div className="h-px w-14 bg-linear-to-l from-transparent via-[#c89d5c] to-transparent sm:w-24" />
+          </div>
+
+          {/* Subtitle Poem */}
           <p
-            className="animate-fade-up mt-4 px-2 text-base italic text-brown-deep sm:text-lg md:text-xl"
-            style={{ animationDelay: "0.5s" }}
+            className="animate-fade-up my-2 text-base italic font-serif text-[#6b4e42] sm:text-lg md:text-xl max-w-md leading-relaxed"
+            style={{ animationDelay: "0.55s" }}
           >
             Cinco décadas de amor, risas y momentos inolvidables
           </p>
 
+          {/* Date Badge Pill */}
           <div
-            className="animate-fade-up mt-8 flex flex-col items-center gap-4 sm:mt-10"
-            style={{ animationDelay: "0.7s" }}
+            className="animate-fade-up my-1 inline-flex items-center justify-center px-6 py-2.5 sm:px-8 sm:py-3"
+            style={{ animationDelay: "0.65s" }}
           >
             <div className="flex flex-wrap items-center justify-center gap-3 text-brown-deep sm:gap-4">
-              <span className="h-px w-8 bg-gold sm:w-12" />
+              <span className="h-px w-8 bg-gold sm:w-12"></span>
               <span className="text-[10px] uppercase tracking-[0.25em] sm:text-sm sm:tracking-[0.3em]">
-                12 · Septiembre · 2026
+                29 · Agosto · 2026
               </span>
-              <span className="h-px w-8 bg-gold sm:w-12" />
+              <span className="h-px w-8 bg-gold sm:w-12"></span>
             </div>
+          </div>
+
+          {/* Action Button: CELEBRAR CONMIGO */}
+          <div
+            className="animate-fade-up my-4"
+            style={{ animationDelay: "0.75s" }}
+          >
             <button
               onClick={fireConfetti}
-              className="animate-pulse-gold group relative overflow-hidden rounded-full px-8 py-3.5 text-xs uppercase tracking-[0.2em] text-white transition-transform hover:scale-105 sm:px-10 sm:py-4 sm:text-sm sm:tracking-[0.25em]"
+              className="group relative flex items-center justify-center gap-2.5 overflow-hidden rounded-full border-2 border-[#e6bd85] px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.2em] text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95 sm:px-10 sm:py-4 sm:text-sm"
               style={{
-                background: "var(--gradient-coral)",
-                boxShadow: "var(--shadow-elegant)",
+                background: "linear-gradient(135deg, #df6b56 0%, #c6533f 100%)",
+                boxShadow:
+                  "0 10px 25px -5px rgba(198, 83, 63, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4)",
               }}
             >
-              <span className="relative z-10">Celebrar Conmigo</span>
+              {/* Party Popper Icon */}
+              <svg
+                className="w-4 h-4 text-white sm:w-5 sm:h-5 transition-transform duration-300 group-hover:rotate-12"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+                />
+              </svg>
+              <span>CELEBRAR CONMIGO</span>
             </button>
           </div>
 
+          {/* DESLIZA Navigation */}
           <div
-            className="animate-fade-up mt-12 text-brown sm:mt-16"
-            style={{ animationDelay: "1s" }}
+            className="animate-fade-up mt-8 flex flex-col items-center gap-1.5 text-[#7a5a4a]"
+            style={{ animationDelay: "0.9s" }}
           >
-            <span className="text-[10px] uppercase tracking-[0.35em] sm:text-xs sm:tracking-[0.4em]">
-              Desliza
+            <span className="text-[10px] font-medium uppercase tracking-[0.35em] sm:text-xs">
+              DESLIZA
             </span>
-            <div
-              className="mx-auto mt-3 h-10 w-px animate-float sm:h-12"
-              style={{
-                background:
-                  "linear-gradient(to bottom, var(--gold), transparent)",
-              }}
-            />
+            <svg
+              className="w-3 h-3 text-[#c66353] fill-current my-0.5"
+              viewBox="0 0 24 24"
+            >
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+            </svg>
+            <div className="flex flex-col items-center -space-y-1.5 animate-bounce mt-1">
+              <svg
+                className="w-4 h-4 text-[#c89d5c]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+              <svg
+                className="w-4 h-4 text-[#c89d5c] opacity-60"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
           </div>
         </div>
       </section>
       {/* ========== COUNTDOWN ========== */}
       <section
-        className="relative overflow-hidden py-12 sm:py-14 md:py-16"
-        style={{ backgroundColor: "var(--beige-soft)" }}
+        className="relative overflow-hidden py-16 sm:py-20 md:py-24"
+        style={{ backgroundColor: "#fdf8f3" }}
       >
-        <div className="mx-auto max-w-4xl px-5 text-center sm:px-6">
-          <p className="reveal-on-scroll text-[10px] uppercase tracking-[0.35em] text-coral-deep sm:text-sm sm:tracking-[0.4em]">
-            La cuenta regresiva
-          </p>
-          <h2 className="reveal-on-scroll mt-4 text-3xl text-brown-deep sm:text-4xl md:text-5xl">
-            Faltan tan solo…
-          </h2>
-          <div className="mx-auto my-6 w-24 gold-divider sm:my-8 sm:w-32" />
+        {/* Background Ambient Sparkles */}
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(#e6c794_1px,transparent_1px)] bg-size-[24px_24px] opacity-20" />
 
-          <div className="reveal-on-scroll grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
-            {[
-              { label: "Días", value: c.days },
-              { label: "Horas", value: c.hours },
-              { label: "Minutos", value: c.minutes },
-              { label: "Segundos", value: c.seconds },
-            ].map((u) => (
-              <div
-                key={u.label}
-                className="group relative rounded-lg border border-border bg-card p-4 transition-transform hover:-translate-y-1 sm:p-6"
-                style={{ boxShadow: "var(--shadow-elegant)" }}
+        <div className="relative z-10 mx-auto max-w-4xl px-5 text-center sm:px-6">
+          {/* Subtitle Header */}
+          <p className="reveal-on-scroll text-[11px] font-medium uppercase tracking-[0.4em] text-[#d16b57] sm:text-xs md:text-sm">
+            LA CUENTA REGRESIVA
+          </p>
+
+          {/* Main Title */}
+          <h2 className="reveal-on-scroll mt-2 text-4xl font-serif text-[#4a382e] sm:text-5xl md:text-6xl drop-shadow-xs">
+            Faltan tan solo...
+          </h2>
+
+          {/* Tiara & Flourish Divider */}
+          <div className="reveal-on-scroll my-6 flex items-center justify-center gap-3 text-[#d4a860]">
+            <div className="flex items-center gap-1.5">
+              <div className="h-px w-12 bg-linear-to-r from-transparent to-[#d4a860] sm:w-20" />
+              <span className="text-[11px]">∞</span>
+              <span className="text-[9px]">◆</span>
+            </div>
+
+            {/* Mini Tiara Ornament */}
+            <svg
+              className="w-10 h-10 text-[#d4a860] drop-shadow-xs"
+              viewBox="0 0 512 512"
+              fill="currentColor"
+            >
+              <path d="M256 27.88l-8.1 16.09c-8.2 16.54-20.2 44.64-30.4 73.03-10.1 28.3-18.5 56-18.5 75 0 22 6.1 43.4 14.4 61.2-1.5.1-2.9.2-4.3.3-15-6.8-29.5-15-41.5-24.5-18.7-15-30.6-32.5-30.6-53 0-14.5 3.7-21.8 7-25 3.3-3.2 6.9-3.7 11.5-2.3 4.6 1.3 9.5 5 12 9.3 2.5 4.3 3.1 8.7.4 14l16.2 8c5.3-10.7 3.9-22.3-1.1-31s-13.1-15-22.5-17.7c-2.4-.6-4.8-1-7.4-1.1-7.5-.4-15.4 1.9-21.6 7.8-8.2 7.8-12.5 20.5-12.5 38 0 27.5 16.1 50 37.4 67 6 4.8 12.4 9.2 19.1 13.2-14.3 1.6-28 3.6-40.8 5.9-9.9-1.3-21-3.9-30.4-7.6-7.17-2.8-13.37-6.4-17.17-10-3.9-3.6-5.4-6.6-5.5-9.9v-.1c-.2-9.9 7.2-15.3 13.4-16 3.1-.4 5.37.4 7.17 2.2 1.7 1.8 3.6 5.4 3.2 12.9l18 1c.6-11.1-2.4-20.4-8.3-26.5-4.5-4.6-10.3-7-16.17-7.5-2-.2-3.9-.2-5.9 0-15.2 1.6-29.7 15.1-29.4 34.3.2 9.1 5 17 11.2 22.8 6.1 5.7 13.6 9.7 21.8 13.1l-1.2.3c-15.8 4.5-29.4 9.6-40.5 15.5-3.1.2-6 .4-8.3.1-2.8-.3-4.6-1-5.9-2-1.3-.9-2.4-2.3-3.5-5.7-.6-2 1.7-6.1 4.8-7.6 1.6-.8 2.7-.8 3.3-.5.7.2 1.8.7 3.2 4.3l16.8-6.4c-2.7-7.1-7.6-12.6-13.7-14.8-3.1-1.2-6.2-1.5-9.2-1.2-2.9.3-5.8 1.2-8.3 2.4-10.1 5-17.9 16.4-14.1 29 1.9 6.4 5.4 11.6 10 15 1.8 1.4 3.7 2.4 5.7 3.2-7.2 10.4-11.7 24.5-11.7 33.6 0 12.6 8.7 23.1 21.1 31.5 12.5 8.5 29.5 15.5 50.3 21.4 26.77 7.7 59.77 13.4 96.57 16.5 16-5.4 16-5.4 0-16.1-35.4-3.1-67.1-8.6-92.17-15.7-19.7-5.7-35.5-12.4-45.7-19.3-10.2-6.9-14.1-13.2-14.1-18.3 0-5.1 3.9-11.4 14.1-18.3s26-13.6 45.7-19.3c33.57-9.5 78.77-16.2 129.27-18 0 .1.1.1.1.1v-.1h1.1c1.6 2.1 3.4 4 5.1 5.7 6 6.1 12.1 10.9 20.6 10.9 8.5 0 14.6-4.8 20.6-10.9 1.7-1.7 3.5-3.6 5.1-5.7h1.1v.1s.1 0 .1-.1c50.5 1.8 95.7 8.5 129.3 18 19.7 5.7 35.5 12.4 45.7 19.3 10.2 6.9 14.1 13.2 14.1 18.3 0 5.1-3.9 11.4-14.1 18.3s-26 13.6-45.7 19.3c-25.1 7.1-56.8 12.6-92.2 15.7-16 10.7-16 10.7 0 16.1 36.8-3.1 69.8-8.8 96.6-16.5 20.8-5.9 37.8-12.9 50.3-21.4 12.4-8.4 21.1-18.9 21.1-31.5 0-9.1-4.5-23.3-11.7-33.6 1.9-.8 3.8-1.9 5.6-3.2 4.6-3.4 8.1-8.6 10-15 3.8-12.6-4-24-14.1-29-2.5-1.2-5.3-2.1-8.3-2.4-3-.3-6.1 0-9.2 1.2-6.1 2.2-11 7.7-13.7 14.8l16.8 6.4c1.4-3.6 2.5-4.1 3.2-4.3.6-.3 1.7-.3 3.3.5 3.1 1.5 5.4 5.6 4.8 7.6-1.1 3.4-2.2 4.8-3.5 5.7-1.3 1-3.1 1.7-5.9 2-2.3.2-5.1.1-8.2-.1-11.1-5.9-24.7-11-40.5-15.5l-1.2-.3c8.2-3.4 15.7-7.4 21.7-13.1 6.3-5.8 11.1-13.7 11.2-22.9.3-19.1-14.1-32.6-29.4-34.2-1.9-.2-3.9-.2-5.8 0-5.9.5-11.7 2.9-16.2 7.5-5.9 6.1-8.9 15.4-8.3 26.5l18-1c-.4-7.5 1.5-11.1 3.2-12.9 1.8-1.8 4.1-2.6 7.2-2.2 6.1.7 13.5 6.1 13.3 16v.1c-.1 3.3-1.6 6.3-5.4 9.9-3.9 3.6-10.1 7.2-17.2 10-9.4 3.7-20.5 6.3-30.4 7.6-12.8-2.3-26.5-4.3-40.8-5.9 6.7-4 13.1-8.4 19.1-13.2 21.3-17 37.4-39.5 37.4-67 0-17.5-4.3-30.2-12.5-38-6.2-5.9-14.1-8.2-21.6-7.8-2.6.1-5 .5-7.4 1.1-9.4 2.7-17.5 9-22.5 17.7s-6.4 20.3-1.1 31l16.2-8c-2.7-5.3-2.1-9.7.4-14 2.5-4.3 7.4-8 12-9.3 4.6-1.4 8.2-.9 11.5 2.3 3.3 3.2 7 10.5 7 25 0 20.5-11.9 38-30.6 53-12 9.5-26.5 17.7-41.5 24.5-1.4-.1-2.8-.2-4.3-.3C306.9 235.4 313 214 313 192c0-19-8.4-46.7-18.5-75-10.2-28.39-22.2-56.49-30.4-73.03zm0 41.45c6.8 15.23 14.6 34.37 21.5 53.67 9.9 27.7 17.5 56 17.5 69 0 22-7.5 44.8-16.9 61.6-4.6 8.4-9.8 15.3-14.2 19.8-4 3.9-7.5 5.3-7.9 5.5 0 .1.1.1 0 .1s0 0 0-.1c-.4-.2-3.9-1.6-7.9-5.5-4.4-4.5-9.6-11.4-14.2-19.8C224.5 236.8 217 214 217 192c0-13 7.6-41.3 17.5-69 6.9-19.3 14.7-38.44 21.5-53.67z" />
+            </svg>
+
+            <div className="flex items-center gap-1.5">
+              <span className="text-[9px]">◆</span>
+              <span className="text-[11px]">∞</span>
+              <div className="h-px w-12 bg-linear-to-l from-transparent to-[#d4a860] sm:w-20" />
+            </div>
+          </div>
+
+          {/* 2x2 Countdown Grid Container */}
+          <div className="reveal-on-scroll relative mx-auto mt-8 max-w-lg sm:max-w-xl">
+            {/* Central Heart Badge */}
+            <div className="absolute left-1/2 top-1/2 z-20 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-[#e6bd85] bg-[#fffcf8] shadow-md sm:h-12 sm:w-12">
+              <svg
+                className="w-4 h-4 text-[#c6533f] fill-current sm:w-5 sm:h-5"
+                viewBox="0 0 24 24"
               >
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3.5 sm:gap-5">
+              {[
+                { label: "DÍAS", value: c.days },
+                { label: "HORAS", value: c.hours },
+                { label: "MINUTOS", value: c.minutes },
+                { label: "SEGUNDOS", value: c.seconds },
+              ].map((u) => (
                 <div
-                  className="pointer-events-none absolute inset-x-4 top-0 h-px"
-                  style={{ background: "var(--gradient-gold)" }}
-                />
-                <div
-                  key={u.value}
-                  className="countdown-tick text-4xl text-brown-deep sm:text-5xl md:text-6xl"
-                  style={{ fontFamily: "var(--font-display)" }}
+                  key={u.label}
+                  className="group relative overflow-hidden rounded-[1.75rem] border-2 border-[#f3e2ca] bg-[#fffcf8] p-5 text-center shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-[#e6bd85] hover:shadow-xl sm:p-7"
                 >
-                  {String(u.value).padStart(2, "0")}
+                  {/* Subtle Inner Gold Double Frame */}
+                  <div className="pointer-events-none absolute inset-2.5 rounded-[1.25rem] border border-[#f5e9d6]/80" />
+
+                  {/* Top Star Accent */}
+                  <div className="flex justify-center text-[#d4a860] mb-1 text-[11px]">
+                    ✦
+                  </div>
+
+                  {/* Number Display */}
+                  <div
+                    key={u.value}
+                    className="countdown-tick my-1 text-4xl font-serif font-normal text-[#804833] sm:text-5xl md:text-6xl drop-shadow-xs"
+                  >
+                    {String(u.value).padStart(2, "0")}
+                  </div>
+
+                  {/* Line Divider with Tiny Heart */}
+                  <div className="my-2.5 flex items-center justify-center gap-2 text-[#d4a860]">
+                    <div className="h-px w-8 bg-linear-to-r from-transparent to-[#d4a860]" />
+                    <svg
+                      className="w-2.5 h-2.5 text-[#c6533f] fill-current"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                    </svg>
+                    <div className="h-px w-8 bg-linear-to-l from-transparent to-[#d4a860]" />
+                  </div>
+
+                  {/* Unit Label */}
+                  <div className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#c6533f] sm:text-xs sm:tracking-[0.35em]">
+                    {u.label}
+                  </div>
+
+                  {/* Bottom-Right Botanical Leaf Accent */}
+                  <svg
+                    className="pointer-events-none absolute -bottom-1 -right-1 w-10 h-10 text-[#e8d5bc] opacity-50 sm:w-12 sm:h-12"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M17 8C8 10 59 16.5 4.5 20c.5-1.5 2-4 5-6 3-2 6-3 7.5-6z"
+                      opacity="0.4"
+                    />
+                    <path d="M12.4 3.5C7.2 7 5.1 11.2 4 16c2.5-1.8 5.8-3.2 8.4-12.5z" />
+                  </svg>
                 </div>
-                <div className="mt-2 text-[10px] uppercase tracking-[0.25em] text-muted-foreground sm:text-xs sm:tracking-[0.3em]">
-                  {u.label}
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -456,10 +672,13 @@ function Invitation() {
       >
         <div className="mx-auto max-w-6xl px-5 sm:px-6">
           <div className="text-center">
-            <p className="reveal-on-scroll text-[10px] uppercase tracking-[0.35em] text-coral-deep sm:text-sm sm:tracking-[0.4em]">
+            {/* Subtitle Header */}
+            <p className="reveal-on-scroll text-[11px] font-medium uppercase tracking-[0.4em] text-[#d16b57] sm:text-xs md:text-sm">
               Los detalles
             </p>
-            <h2 className="reveal-on-scroll mt-4 text-4xl text-brown-deep sm:text-5xl">
+
+            {/* Main Title */}
+            <h2 className="reveal-on-scroll mt-2 text-4xl font-serif text-[#4a382e] sm:text-5xl md:text-6xl drop-shadow-xs">
               Toma nota
             </h2>
             <div className="mx-auto my-6 w-24 gold-divider sm:w-32" />
@@ -470,21 +689,21 @@ function Invitation() {
               {
                 icon: <CalendarIcon />,
                 title: "Cuándo",
-                lines: ["Sábado 12 de Septiembre", "2026 · 7:00 pm"],
+                lines: ["Sábado 29 de Agosto", "2026 · 8:00 pm"],
               },
               {
                 icon: <LocationIcon />,
                 title: "Dónde",
-                lines: ["Salón Villa Coral", "Av. de los Jardines 250"],
-                link: "https://maps.google.com/?q=Salón+Villa+Coral+Av+de+los+Jardines+250",
+                lines: [
+                  "Av. Gran Chimu N° 654, Zarate",
+                  "San Juan de Lurigancho",
+                ],
+                link: "https://maps.app.goo.gl/nsWUfKq5XW76PmdZ8",
               },
               {
                 icon: <DressSuitIcon />,
                 title: "Etiqueta",
-                lines: [
-                  "Damas: Cóctel elegante (Coral/Dorado)",
-                  "Varones: Traje formal / Saco",
-                ],
+                lines: ["Damas y Varones: Sport Elegante"],
               },
             ].map((d, idx) => (
               <div
@@ -673,16 +892,16 @@ function Invitation() {
         />
 
         <div className="relative mx-auto max-w-xl px-5 text-center sm:px-6">
-          <p className="reveal-on-scroll text-[10px] uppercase tracking-[0.35em] text-coral-deep sm:text-sm sm:tracking-[0.4em]">
+          <p className="reveal-on-scroll text-[12px] uppercase tracking-[0.35em] text-coral-deep sm:text-sm sm:tracking-[0.4em]">
             Confirma tu asistencia
           </p>
-          <h2 className="reveal-on-scroll mt-4 text-4xl text-brown-deep sm:text-5xl">
+          <h2 className="reveal-on-scroll mt-2 text-4xl text-brown-deep sm:text-5xl">
             Reserva tu lugar
           </h2>
-          <div className="mx-auto my-6 w-24 gold-divider sm:w-32" />
+          <div className="mx-auto my-6 w-34 gold-divider sm:w-32" />
           <p className="reveal-on-scroll text-brown">
-            Tu presencia es el mejor regalo. Por favor confirma antes del 1 de
-            Septiembre.
+            Tu presencia es el mejor regalo. Por favor confirma antes del 22 de
+            Agosto.
           </p>
 
           {rsvpSent ? (
@@ -698,7 +917,7 @@ function Invitation() {
                 ¡Gracias!
               </h3>
               <p className="mt-2 text-brown text-sm">
-                Nos vemos el 12 de Septiembre.
+                Nos vemos el 29 de Agosto.
               </p>
             </div>
           ) : (
@@ -779,26 +998,36 @@ function Invitation() {
                 Al hacer clic en el botón, te redirigiremos a WhatsApp para
                 confirmar tu asistencia.
               </p>
-
               <div className="relative z-10">
                 <button
                   onClick={() => {
                     setRsvpSent(true);
                     fireConfetti();
-                    // Reemplaza con el número de teléfono deseado
-                    window.open(
-                      "https://wa.me/521234567890?text=¡Hola!%20Confirmo%20mi%20asistencia%20a%20tu%20cumpleaños%20de%2050%20años.",
-                      "_blank",
-                    );
+
+                    const message = [
+                      "🌸 ¡Hola, Jacky! 💖",
+                      "",
+                      "✨ Con mucho gusto confirmo mi asistencia para acompañarte en la celebración de tus 50 años. 🎉🥂",
+                      "",
+                      "Será un verdadero placer compartir contigo este momento tan especial, lleno de alegría, recuerdos y buenos deseos. 💐",
+                      "",
+                      "📅 Nos vemos el 29 de agosto.",
+                      "¡Estoy deseando celebrar contigo! 🎂🎈",
+                    ].join("\n");
+
+                    setTimeout(() => {
+                      const whatsappUrl = `https://api.whatsapp.com/send?phone=51992088977&text=${encodeURIComponent(message)}`;
+                      window.open(whatsappUrl, "_blank");
+                    }, 700);
                   }}
-                  className="inline-flex items-center justify-center gap-2.5 rounded-full px-6 mb-4 py-3 text-[11px] font-medium uppercase tracking-[0.2em] text-white transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
+                  className="group inline-flex items-center justify-center gap-2.5 rounded-full px-6 mb-4 py-3 text-[11px] font-medium uppercase tracking-[0.2em] text-white transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 active:scale-95 cursor-pointer"
                   style={{
                     background: "var(--gradient-coral)",
                     boxShadow: "var(--shadow-gold)",
                   }}
                 >
                   <svg
-                    className="w-3.5 h-3.5"
+                    className="h-3.5 w-3.5 transition-transform duration-300 group-hover:rotate-12"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                     xmlns="http://www.w3.org/2000/svg"
@@ -810,6 +1039,7 @@ function Invitation() {
                       d="M3.5 12C3.5 7.30558 7.30558 3.5 12 3.5C16.6944 3.5 20.5 7.30558 20.5 12C20.5 16.6944 16.6944 20.5 12 20.5C10.3278 20.5 8.77127 20.0182 7.45798 19.1861C7.21357 19.0313 6.91408 18.9899 6.63684 19.0726L3.75769 19.9319L4.84173 17.3953C4.96986 17.0955 4.94379 16.7521 4.77187 16.4751C3.9657 15.176 3.5 13.6439 3.5 12ZM12 1.5C6.20101 1.5 1.5 6.20101 1.5 12C1.5 13.8381 1.97314 15.5683 2.80463 17.0727L1.08045 21.107C0.928028 21.4637 0.995589 21.8763 1.2538 22.1657C1.51201 22.4552 1.9143 22.5692 2.28597 22.4582L6.78539 21.1155C8.32243 21.9965 10.1037 22.5 12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5ZM14.2925 14.1824L12.9783 15.1081C12.3628 14.7575 11.6823 14.2681 10.9997 13.5855C10.2901 12.8759 9.76402 12.1433 9.37612 11.4713L10.2113 10.7624C10.5697 10.4582 10.6678 9.94533 10.447 9.53028L9.38284 7.53028C9.23954 7.26097 8.98116 7.0718 8.68115 7.01654C8.38113 6.96129 8.07231 7.046 7.84247 7.24659L7.52696 7.52195C6.76823 8.18414 6.3195 9.2723 6.69141 10.3741C7.07698 11.5163 7.89983 13.314 9.58552 14.9997C11.3991 16.8133 13.2413 17.5275 14.3186 17.8049C15.1866 18.0283 16.008 17.7288 16.5868 17.2572L17.1783 16.7752C17.4313 16.5691 17.5678 16.2524 17.544 15.9269C17.5201 15.6014 17.3389 15.308 17.0585 15.1409L15.3802 14.1409C15.0412 13.939 14.6152 13.9552 14.2925 14.1824Z"
                     />
                   </svg>
+
                   <span>Confirmar por WhatsApp</span>
                 </button>
               </div>
@@ -827,14 +1057,14 @@ function Invitation() {
       >
         <div className="mx-auto max-w-2xl px-6">
           <div
-            className="mx-auto mb-6 w-24 gold-divider"
+            className="mx-auto mb-6 w-34 gold-divider"
             style={{
               background:
                 "linear-gradient(90deg, transparent, var(--gold), transparent)",
             }}
           />
           <h3
-            className="text-4xl"
+            className="text-5xl"
             style={{
               fontFamily: "var(--font-script)",
               color: "var(--gold-soft)",
@@ -843,7 +1073,7 @@ function Invitation() {
             Con amor
           </h3>
           <p className="mt-4 text-sm uppercase tracking-[0.3em] opacity-70">
-            Nos vemos en septiembre
+            Nos vemos en agosto
           </p>
         </div>
       </footer>
