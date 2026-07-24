@@ -319,7 +319,7 @@ function Invitation() {
         }}
       />
       {/* ========== HERO ========== */}
-      <section className="relative flex min-h-screen items-center justify-center overflow-hidden py-12 md:py-20">
+      <section className="relative flex min-h-dvh items-center justify-center overflow-hidden py-6 sm:py-12 md:py-20">
         <div
           ref={heroRef}
           className="absolute inset-0 -z-10 will-change-transform"
@@ -341,7 +341,7 @@ function Invitation() {
           aria-hidden="true"
           width={420}
           height={420}
-          className="pointer-events-none absolute -left-10 -top-10 w-48 opacity-90 sm:w-64 md:w-80 lg:w-96 animate-float will-change-transform drop-shadow-md"
+          className="pointer-events-none absolute -left-10 -top-10 w-40 opacity-90 sm:w-64 md:w-80 lg:w-96 animate-float will-change-transform drop-shadow-md"
         />
 
         {/* Bottom-Right Floral Corner */}
@@ -352,23 +352,23 @@ function Invitation() {
           aria-hidden="true"
           width={420}
           height={420}
-          className="pointer-events-none absolute -bottom-10 -right-10 w-52 rotate-120 opacity-90 sm:w-72 md:w-96 lg:w-105 animate-float-slow will-change-transform drop-shadow-md"
+          className="pointer-events-none absolute -bottom-10 -right-10 w-44 rotate-120 opacity-90 sm:w-72 md:w-96 lg:w-105 animate-float-slow will-change-transform drop-shadow-md"
         />
 
         {/* Central Card Container for Desktop & Seamless Mobile Hero */}
         <div
           ref={heroContentRef}
-          className="relative z-10 mx-auto mt-14 flex w-full max-w-md flex-col items-center px-6 text-center will-change-transform sm:max-w-lg md:max-w-xl lg:max-w-2xl"
+          className="relative z-10 mx-auto mt-4 sm:mt-10 md:mt-14 flex w-full max-w-full min-[380px]:max-w-md flex-col items-center px-2 min-[360px]:px-4 sm:px-6 text-center will-change-transform sm:max-w-lg md:max-w-xl lg:max-w-2xl overflow-visible"
         >
           {/* Crown Icon */}
           <div
-            className="animate-fade-up mb-4 flex justify-center"
+            className="animate-fade-up mb-2 sm:mb-4 flex justify-center"
             style={{ animationDelay: "0.1s" }}
           >
             <div
               className="
       relative
-      flex h-14 w-14 items-center justify-center
+      flex h-11 w-11 sm:h-14 sm:w-14 items-center justify-center
       rounded-full
       border border-[#ecd8b4]
       bg-linear-to-b
@@ -378,20 +378,20 @@ function Invitation() {
     "
             >
               {/* Destellos */}
-              <span className="absolute -left-1 top-2 text-[10px] text-[#e8c67a]">
+              <span className="absolute -left-1 top-2 text-[9px] sm:text-[10px] text-[#e8c67a]">
                 ✦
               </span>
-              <span className="absolute -right-1 bottom-2 text-[8px] text-[#e8c67a]">
+              <span className="absolute -right-1 bottom-2 text-[7px] sm:text-[8px] text-[#e8c67a]">
                 ✦
               </span>
               {/* Tiara */}
-              <TiaraIcon className="w-9 h-9 sm:w-11 sm:h-11 text-[#c89d5c] drop-shadow-sm transition-transform duration-300 hover:scale-110" />
+              <TiaraIcon className="w-7 h-7 sm:w-11 sm:h-11 text-[#c89d5c] drop-shadow-sm transition-transform duration-300 hover:scale-110" />
             </div>
           </div>
 
           {/* Invitation Intro Header */}
           <p
-            className="animate-fade-up text-[11px] font-medium uppercase tracking-[0.38em] text-[#7a5a4a] sm:text-xs md:text-sm md:tracking-[0.42em]"
+            className="animate-fade-up text-[10px] min-[360px]:text-[11px] font-medium uppercase tracking-[0.22em] min-[360px]:tracking-[0.38em] text-[#7a5a4a] sm:text-xs md:text-sm md:tracking-[0.42em]"
             style={{ animationDelay: "0.2s" }}
           >
             Estás cordialmente invitado a
@@ -399,59 +399,61 @@ function Invitation() {
 
           {/* Top Flourish Ornament Line */}
           <div
-            className="animate-fade-up my-3 flex items-center justify-center gap-2 text-[#c89d5c]"
+            className="animate-fade-up my-2 sm:my-3 flex items-center justify-center gap-2 text-[#c89d5c]"
             style={{ animationDelay: "0.25s" }}
           >
-            <div className="h-px w-12 bg-linear-to-r from-transparent to-[#c89d5c] sm:w-20" />
-            <span className="text-[10px]">◆</span>
-            <div className="h-px w-12 bg-linear-to-l from-transparent to-[#c89d5c] sm:w-20" />
+            <div className="h-px w-8 min-[360px]:w-12 bg-linear-to-r from-transparent to-[#c89d5c] sm:w-20" />
+            <span className="text-[9px] min-[360px]:text-[10px]">◆</span>
+            <div className="h-px w-8 min-[360px]:w-12 bg-linear-to-l from-transparent to-[#c89d5c] sm:w-20" />
           </div>
 
           {/* Title: Mis Cincuenta */}
           <h1
-            className="animate-fade-up text-6xl leading-[1.1] sm:text-7xl md:text-8xl pt-4 sm:pt-6"
+            className="animate-fade-up text-[2.25rem] min-[360px]:text-[2.75rem] min-[390px]:text-[3.35rem] min-[430px]:text-6xl sm:text-7xl md:text-8xl leading-tight pt-1.5 min-[360px]:pt-3 sm:pt-6 max-w-full overflow-visible whitespace-nowrap flex items-baseline justify-center gap-1 sm:gap-2"
             style={{ animationDelay: "0.3s", fontFamily: "var(--font-script)" }}
           >
-            <span className="text-shimmer pr-2 sm:pr-3">Mis</span>
-            <span className="text-shimmer inline-flex items-baseline pr-6 sm:pr-8">
-              <span>5</span>
+            <span className="text-shimmer py-1">Mis</span>
+            <span className="inline-flex items-baseline py-1">
+              <span className="text-shimmer">5</span>
               <span className="relative inline-block">
                 {/* Tiara sitting close to the top of 0, gracefully tilted */}
-                <span className="absolute -top-5  sm:-top-6 md:-top-7 left-1/2 -translate-x-1/2 flex items-center justify-center pointer-events-none z-10">
-                  <span className="absolute -left-1.5 -top-0.5 text-[9px] sm:text-[10px] text-[#e8c67a]">
+                <span className="absolute -top-3.5 min-[360px]:-top-4 min-[390px]:-top-4.5 sm:-top-6 md:-top-7 left-1/2 -translate-x-1/2 flex items-center justify-center pointer-events-none z-10">
+                  <span className="absolute -left-1 -top-0.5 text-[7px] min-[360px]:text-[8px] sm:text-[10px] text-[#e8c67a]">
                     ✦
                   </span>
-                  <span className="absolute -right-1.5 -top-0.5 text-[8px] sm:text-[9px] text-[#e8c67a]">
+                  <span className="absolute -right-1 -top-0.5 text-[6px] min-[360px]:text-[7px] sm:text-[9px] text-[#e8c67a]">
                     ✦
                   </span>
                   <TiaraIcon
                     useShimmer
-                    className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 drop-shadow-md -rotate-4"
+                    className="w-5 h-5 min-[360px]:w-6.5 min-[360px]:h-6.5 min-[390px]:w-7.5 min-[390px]:h-7.5 sm:w-10 sm:h-10 md:w-12 md:h-12 drop-shadow-md -rotate-4"
                   />
                 </span>
-                0
+                <span className="text-shimmer pr-1.5 min-[360px]:pr-2 sm:pr-4">
+                  0
+                </span>
               </span>
             </span>
           </h1>
 
           {/* Heart Flourish Divider */}
           <div
-            className="animate-fade-up my-2 flex items-center justify-center gap-3 text-[#c89d5c]"
+            className="animate-fade-up my-2 flex items-center justify-center gap-2.5 sm:gap-3 text-[#c89d5c]"
             style={{ animationDelay: "0.45s" }}
           >
-            <div className="h-px w-14 bg-linear-to-r from-transparent via-[#c89d5c] to-transparent sm:w-24" />
+            <div className="h-px w-10 min-[360px]:w-14 bg-linear-to-r from-transparent via-[#c89d5c] to-transparent sm:w-24" />
             <svg
-              className="w-3.5 h-3.5 text-[#c66353] fill-current"
+              className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#c66353] fill-current"
               viewBox="0 0 24 24"
             >
               <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
             </svg>
-            <div className="h-px w-14 bg-linear-to-l from-transparent via-[#c89d5c] to-transparent sm:w-24" />
+            <div className="h-px w-10 min-[360px]:w-14 bg-linear-to-l from-transparent via-[#c89d5c] to-transparent sm:w-24" />
           </div>
 
           {/* Subtitle Poem */}
           <p
-            className="animate-fade-up my-2 text-base italic font-serif text-[#6b4e42] sm:text-lg md:text-xl max-w-md leading-relaxed"
+            className="animate-fade-up my-1.5 sm:my-2 text-xs min-[360px]:text-sm min-[390px]:text-base italic font-serif text-[#6b4e42] sm:text-lg md:text-xl max-w-md leading-relaxed px-2 sm:px-0"
             style={{ animationDelay: "0.55s" }}
           >
             Cinco décadas de amor, risas y momentos inolvidables
@@ -459,26 +461,26 @@ function Invitation() {
 
           {/* Date Badge Pill */}
           <div
-            className="animate-fade-up my-1 inline-flex items-center justify-center px-6 py-2.5 sm:px-8 sm:py-3"
+            className="animate-fade-up my-1 inline-flex items-center justify-center px-3 py-1.5 min-[360px]:px-4 min-[360px]:py-2 sm:px-8 sm:py-3"
             style={{ animationDelay: "0.65s" }}
           >
-            <div className="flex flex-wrap items-center justify-center gap-3 text-brown-deep sm:gap-4">
-              <span className="h-px w-8 bg-gold sm:w-12"></span>
-              <span className="text-[10px] uppercase tracking-[0.25em] sm:text-sm sm:tracking-[0.3em]">
+            <div className="flex flex-wrap items-center justify-center gap-1.5 min-[360px]:gap-2 text-brown-deep sm:gap-4">
+              <span className="h-px w-4 min-[360px]:w-8 bg-gold sm:w-12"></span>
+              <span className="text-[9px] min-[360px]:text-[10px] uppercase tracking-[0.16em] min-[360px]:tracking-[0.25em] sm:text-sm sm:tracking-[0.3em]">
                 29 · Agosto · 2026
               </span>
-              <span className="h-px w-8 bg-gold sm:w-12"></span>
+              <span className="h-px w-4 min-[360px]:w-8 bg-gold sm:w-12"></span>
             </div>
           </div>
 
           {/* Action Button: CELEBRAR CONMIGO */}
           <div
-            className="animate-fade-up my-4"
+            className="animate-fade-up my-3 sm:my-4"
             style={{ animationDelay: "0.75s" }}
           >
             <button
               onClick={fireConfetti}
-              className="group relative flex items-center justify-center gap-2.5 overflow-hidden rounded-full border-2 border-[#e6bd85] px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.2em] text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95 sm:px-10 sm:py-4 sm:text-sm"
+              className="group relative flex items-center justify-center gap-2 overflow-hidden rounded-full border-2 border-[#e6bd85] px-6 py-3 min-[360px]:px-8 min-[360px]:py-3.5 text-[11px] min-[360px]:text-xs font-semibold uppercase tracking-[0.18em] min-[360px]:tracking-[0.2em] text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95 sm:px-10 sm:py-4 sm:text-sm"
               style={{
                 background: "linear-gradient(135deg, #df6b56 0%, #c6533f 100%)",
                 boxShadow:
@@ -487,7 +489,7 @@ function Invitation() {
             >
               {/* Party Popper Icon */}
               <svg
-                className="w-4 h-4 text-white sm:w-5 sm:h-5 transition-transform duration-300 group-hover:rotate-12"
+                className="w-3.5 h-3.5 text-white sm:w-5 sm:h-5 transition-transform duration-300 group-hover:rotate-12"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -499,13 +501,13 @@ function Invitation() {
                   d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
                 />
               </svg>
-              <span>CELEBRAR CONMIGO</span>
+              <span>CELEBRA CONMIGO</span>
             </button>
           </div>
 
           {/* DESLIZA Navigation */}
           <div
-            className="animate-fade-up mt-8 flex flex-col items-center gap-1.5 text-[#7a5a4a]"
+            className="animate-fade-up mt-4 sm:mt-8 flex flex-col items-center gap-1 text-[#7a5a4a]"
             style={{ animationDelay: "0.9s" }}
           >
             <span className="text-[10px] font-medium uppercase tracking-[0.35em] sm:text-xs">
@@ -765,7 +767,7 @@ function Invitation() {
                   "Av. Gran Chimu N° 654, Zarate",
                   "San Juan de Lurigancho",
                 ],
-                link: "https://maps.app.goo.gl/nsWUfKq5XW76PmdZ8",
+                link: "https://maps.app.goo.gl/kbZqfFsupV8TuoXz5",
               },
               {
                 icon: <DressSuitIcon />,
