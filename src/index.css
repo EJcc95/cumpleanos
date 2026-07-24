@@ -187,10 +187,10 @@
 .text-shimmer {
   background: linear-gradient(
     90deg,
-    var(--brown-deep) 0%,
-    var(--gold) 40%,
-    var(--coral-deep) 60%,
-    var(--brown-deep) 100%
+    var(--coral-deep) 0%,
+    var(--gold) 35%,
+    var(--gold-soft) 65%,
+    var(--gold) 100%
   );
   background-size: 200% auto;
   -webkit-background-clip: text;
