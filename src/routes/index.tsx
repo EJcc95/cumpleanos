@@ -1,13 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import confetti from "canvas-confetti";
-import bg from "@/assets/bg.webp";
+import bg from "@/assets/bg-0.webp";
 import bg1 from "@/assets/bg-1.webp";
 import bg2 from "@/assets/bg-2.webp";
 import bg3 from "@/assets/bg-3.webp";
 import bg4 from "@/assets/bg-4.webp";
 import bg5 from "@/assets/bg-5.webp";
 import bg6 from "@/assets/bg-6.webp";
+import bg7 from "@/assets/bg-7.webp";
+import bg8 from "@/assets/bg-8.webp";
+import bg9 from "@/assets/bg-9.webp";
+import bg10 from "@/assets/bg-10.webp";
 import floralAccent from "@/assets/floral.png";
 import celebration from "@/assets/celebration.webp";
 
@@ -237,7 +241,7 @@ function Invitation() {
   const [rsvpSent, setRsvpSent] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
-  const storySlides = [bg, bg1, bg2, bg3, bg4, bg5, bg6];
+  const storySlides = [bg, bg1, bg2, bg3, bg4, bg5, bg6, bg7, bg8, bg9, bg10];
 
   useEffect(() => {
     const t = setTimeout(() => {
@@ -709,7 +713,7 @@ function Invitation() {
                 50
               </span>
               <br />
-              años de historias
+              Años de historias
             </h2>
             <div
               className="my-6 h-px w-24"
