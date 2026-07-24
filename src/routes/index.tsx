@@ -14,6 +14,7 @@ import bg9 from "@/assets/bg-9.webp";
 import bg10 from "@/assets/bg-10.webp";
 import floralAccent from "@/assets/floral.png";
 import celebration from "@/assets/celebration.webp";
+import ladyInRedMusic from "@/assets/ABBA-Dancing-Queen.mp3";
 
 export const Route = createFileRoute("/")({
   component: Invitation,
@@ -233,6 +234,7 @@ function Invitation() {
   useReveal();
   const heroRef = useRef<HTMLDivElement>(null);
   const heroContentRef = useRef<HTMLDivElement>(null);
+  const audioRef = useRef<HTMLAudioElement>(null);
   const floral1Ref = useRef<HTMLImageElement>(null);
   const floral2Ref = useRef<HTMLImageElement>(null);
   const celebrationRef = useRef<HTMLImageElement>(null);
@@ -241,7 +243,119 @@ function Invitation() {
   const [rsvpSent, setRsvpSent] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [showTrackBadge, setShowTrackBadge] = useState(true);
   const storySlides = [bg, bg1, bg2, bg3, bg4, bg5, bg6, bg7, bg8, bg9, bg10];
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    audio.volume = 0.5;
+    audio.loop = true;
+
+    // Helper to attempt unmuted playback, falling back to muted autoplay
+    const enableAudio = async () => {
+      try {
+        audio.muted = false;
+        await audio.play();
+        setIsPlaying(true);
+      } catch {
+        // If browser blocks unmuted autoplay, start muted first
+        try {
+          audio.muted = true;
+          await audio.play();
+          setIsPlaying(true);
+        } catch {
+          setIsPlaying(false);
+        }
+      }
+    };
+
+    enableAudio();
+
+    const gestures = [
+      "click",
+      "keydown",
+      "touchstart",
+      "touchend",
+      "pointerdown",
+      "scroll",
+    ];
+
+    // Direct gesture listener to unmute & play audio on the first valid user
+    // interaction. It only exists to bypass the browser's autoplay block, so
+    // it removes itself once playback actually succeeds — not on every
+    // event (e.g. scroll never counts as a valid gesture for audio, so
+    // removing on that would kill the listener before a real tap ever
+    // reaches it).
+    const removeGestureListeners = () => {
+      gestures.forEach((evt) => window.removeEventListener(evt, handleGesture));
+    };
+
+    const handleGesture = () => {
+      if (!audio) return;
+      audio.muted = false;
+      audio
+        .play()
+        .then(() => {
+          setIsPlaying(true);
+          removeGestureListeners();
+        })
+        .catch(() => {});
+    };
+
+    gestures.forEach((evt) =>
+      window.addEventListener(evt, handleGesture, { passive: true }),
+    );
+
+    // Keep the button icon in sync with the audio element's real state
+    const handlePlay = () => setIsPlaying(true);
+    const handlePause = () => setIsPlaying(false);
+    audio.addEventListener("play", handlePlay);
+    audio.addEventListener("pause", handlePause);
+
+    return () => {
+      removeGestureListeners();
+      audio.removeEventListener("play", handlePlay);
+      audio.removeEventListener("pause", handlePause);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isPlaying) {
+      setShowTrackBadge(true);
+      return;
+    }
+    const hideTimer = setTimeout(() => setShowTrackBadge(false), 5000);
+    return () => clearTimeout(hideTimer);
+  }, [isPlaying]);
+
+  const togglePlay = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (isPlaying && !audio.paused && !audio.muted) {
+      audio.pause();
+      setIsPlaying(false);
+    } else {
+      audio.muted = false;
+      audio
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch(() => {});
+    }
+  };
+
+  const handleCelebrate = () => {
+    fireConfetti();
+    if (audioRef.current) {
+      audioRef.current.muted = false;
+      audioRef.current
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch(() => {});
+    }
+  };
 
   useEffect(() => {
     const t = setTimeout(() => {
@@ -479,7 +593,7 @@ function Invitation() {
             style={{ animationDelay: "0.75s" }}
           >
             <button
-              onClick={fireConfetti}
+              onClick={handleCelebrate}
               className="group relative flex items-center justify-center gap-2 overflow-hidden rounded-full border-2 border-[#e6bd85] px-6 py-3 min-[360px]:px-8 min-[360px]:py-3.5 text-[11px] min-[360px]:text-xs font-semibold uppercase tracking-[0.18em] min-[360px]:tracking-[0.2em] text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95 sm:px-10 sm:py-4 sm:text-sm"
               style={{
                 background: "linear-gradient(135deg, #df6b56 0%, #c6533f 100%)",
@@ -1146,6 +1260,58 @@ function Invitation() {
           </p>
         </div>
       </footer>
+      {/* Background Audio Element */}
+      <audio ref={audioRef} src={ladyInRedMusic} autoPlay loop preload="auto" />
+      {/* Floating Audio Control Button */}
+      <div className="fixed bottom-5 left-5 z-50 flex items-center gap-2">
+        <button
+          onClick={togglePlay}
+          title={isPlaying ? "Pausar música" : "Reproducir música"}
+          aria-label={
+            isPlaying ? "Pausar música de fondo" : "Reproducir música de fondo"
+          }
+          className={`group relative flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full border border-[#f8dfbd] bg-linear-to-br from-[#fffaf3] via-[#f8e8d1] to-[#e7bd83] text-[#804833] shadow-[0_8px_24px_rgba(128,72,51,0.22)] ring-4 ring-[#fffaf3]/70 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:shadow-[0_10px_28px_rgba(128,72,51,0.3)] active:scale-95 cursor-pointer ${
+            isPlaying ? "shadow-[#d4a860]/60" : "opacity-90"
+          }`}
+        >
+          <span className="absolute inset-1 rounded-full border border-[#d4a860]/45" />
+          {isPlaying ? (
+            <div className="relative flex items-center gap-0.5">
+              <span className="h-3.5 w-0.5 rounded-full bg-[#c6533f] animate-[bounce_1s_infinite_100ms]" />
+              <span className="h-5 w-0.5 rounded-full bg-[#b47b38] animate-[bounce_1s_infinite_300ms]" />
+              <span className="h-3 w-0.5 rounded-full bg-[#804833] animate-[bounce_1s_infinite_200ms]" />
+            </div>
+          ) : (
+            <svg
+              className="relative ml-0.5 h-4 w-4 text-[#804833] sm:h-5 sm:w-5"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          )}
+        </button>
+
+        {/* Music Track Badge */}
+        <div
+          aria-live="polite"
+          className={`hidden min-[380px]:flex items-center gap-1.5 rounded-full border border-[#f3e2ca] bg-[#fffaf3]/95 px-3 py-1.5 text-[9px] font-medium text-[#7a5a4a] shadow-[0_5px_18px_rgba(128,72,51,0.14)] backdrop-blur-md transition-all duration-700 ${
+            showTrackBadge
+              ? "opacity-100 translate-x-0"
+              : "pointer-events-none w-0 -translate-x-2 overflow-hidden border-0 px-0 opacity-0"
+          }`}
+        >
+          <span
+            className={`text-xs ${isPlaying ? "animate-spin" : ""}`}
+            style={{ animationDuration: "4s" }}
+          >
+            🎵
+          </span>
+          <span className="truncate max-w-28 sm:max-w-36">
+            ABBA - Dancing Queen
+          </span>
+        </div>
+      </div>
     </main>
   );
 }
